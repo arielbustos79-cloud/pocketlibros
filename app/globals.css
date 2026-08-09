@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-navy:       #0D2B4E;
+  --color-navy-mid:   #1A4070;
+  --color-gold:       #B8952A;
+  --color-gold-light: #F0E6C0;
+  --color-surface:    #F5F5F3;
+  --color-border:     #E0DDD8;
+  --color-muted:      #666666;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, system-ui, sans-serif;
+  color: #222222;
+  background: #ffffff;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 30s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

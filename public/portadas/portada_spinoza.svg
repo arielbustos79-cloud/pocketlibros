@@ -1,0 +1,56 @@
+<svg viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="900" fill="#0A1220"/>
+  <g fill="#FFFFFF" opacity="0.28">
+    <circle cx="78" cy="78" r="1.5"/>
+    <circle cx="178" cy="58" r="1"/>
+    <circle cx="478" cy="82" r="1.5"/>
+    <circle cx="542" cy="118" r="1"/>
+    <circle cx="102" cy="178" r="1"/>
+    <circle cx="520" cy="198" r="1"/>
+  </g>
+  <!-- Input parallel rays (left to lens) -->
+  <g stroke="#B8952A" stroke-width="1.4" opacity="0.48">
+    <line x1="28" y1="198" x2="300" y2="198"/>
+    <line x1="28" y1="222" x2="300" y2="222"/>
+    <line x1="28" y1="248" x2="300" y2="248"/>
+    <line x1="28" y1="275" x2="300" y2="275"/>
+    <line x1="28" y1="325" x2="300" y2="325"/>
+    <line x1="28" y1="352" x2="300" y2="352"/>
+    <line x1="28" y1="378" x2="300" y2="378"/>
+    <line x1="28" y1="402" x2="300" y2="402"/>
+  </g>
+  <!-- Center axis ray (brightest) -->
+  <line x1="28" y1="300" x2="490" y2="300" stroke="#FFFFFF" stroke-width="1.8" opacity="0.72"/>
+  <!-- Converging rays (lens to focal point at x=490, y=300) -->
+  <g stroke="#B8952A" stroke-width="1.4" opacity="0.48">
+    <line x1="300" y1="198" x2="490" y2="300"/>
+    <line x1="300" y1="222" x2="490" y2="300"/>
+    <line x1="300" y1="248" x2="490" y2="300"/>
+    <line x1="300" y1="275" x2="490" y2="300"/>
+    <line x1="300" y1="325" x2="490" y2="300"/>
+    <line x1="300" y1="352" x2="490" y2="300"/>
+    <line x1="300" y1="378" x2="490" y2="300"/>
+    <line x1="300" y1="402" x2="490" y2="300"/>
+  </g>
+  <!-- Biconvex lens -->
+  <!-- Left arc (curves left = convex outward) -->
+  <path d="M300,185 Q234,300 300,415" fill="none" stroke="#FFFFFF" stroke-width="2.4" opacity="0.65"/>
+  <!-- Right arc (curves right = convex outward) -->
+  <path d="M300,185 Q366,300 300,415" fill="none" stroke="#FFFFFF" stroke-width="2.4" opacity="0.65"/>
+  <!-- Lens fill (faint) -->
+  <path d="M300,185 Q234,300 300,415 Q366,300 300,185 Z" fill="#FFFFFF" opacity="0.05"/>
+  <!-- Lens center highlight -->
+  <ellipse cx="300" cy="300" rx="8" ry="45" fill="#FFFFFF" opacity="0.05"/>
+  <!-- Focal point glow -->
+  <circle cx="490" cy="300" r="24" fill="#B8952A" opacity="0.12"/>
+  <circle cx="490" cy="300" r="14" fill="#B8952A" opacity="0.2"/>
+  <circle cx="490" cy="300" r="6" fill="#F0E060" opacity="0.55"/>
+  <circle cx="490" cy="300" r="2.5" fill="#FFFFFF" opacity="0.95"/>
+  <!-- Text area -->
+  <line x1="50" y1="638" x2="120" y2="638" stroke="#B8952A" stroke-width="1.5"/>
+  <text x="50" y="690" font-family="Georgia,'Times New Roman',serif" font-size="65" fill="#FFFFFF">Ética</text>
+  <text x="50" y="738" font-family="Georgia,'Times New Roman',serif" font-size="15" fill="#B8952A" letter-spacing="2">Spinoza</text>
+  <text x="50" y="770" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#B8952A" letter-spacing="4">GRANDES PENSADORES</text>
+  <line x1="50" y1="855" x2="550" y2="855" stroke="#B8952A" stroke-width="0.5" opacity="0.3"/>
+  <text x="300" y="872" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#B8952A" letter-spacing="5" text-anchor="middle">POCKET LIBROS</text>
+</svg>

@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pocketlibros — Ebooks cortos. Conocimiento accionable.</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0D2B4E;
+    --navy-mid: #1A4070;
+    --gold: #B8952A;
+    --gold-light: #F0E6C0;
+    --white: #FFFFFF;
+    --text: #222222;
+    --gray-light: #F5F5F3;
+    --gray-border: #E0DDD8;
+    --muted:       #666666;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: Arial, system-ui, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* ── NAV ── transparente sobre hero, sticky blanco después */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s, border-color 0.3s, padding 0.3s;
+  }
+
+  nav.scrolled {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-border);
+    padding: 1rem 2.5rem;
+  }
+
+  .logo {
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: normal;
+    letter-spacing: 0.25em;
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  nav.scrolled .logo { color: var(--navy); }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.72);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  nav.scrolled .nav-links a { color: var(--text); }
+  nav.scrolled .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO — full screen navy (de C) ── */
+  #hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 2.5rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+  }
+
+  #hero::after {
+    content: 'PL';
+    position: absolute;
+    right: -0.05em;
+    bottom: -0.15em;
+    font-family: Georgia, serif;
+    font-size: clamp(12rem, 28vw, 26rem);
+    font-weight: normal;
+    color: rgba(255,255,255,0.025);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hero-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 5rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+  }
+
+  .hero-kicker::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  /* Tipografía grande de C, sin negritas extra */
+  #hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(2.8rem, 6vw, 4.8rem);
+    font-weight: normal;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  #hero h1 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-scroll {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .hero-scroll::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: rgba(255,255,255,0.25);
+  }
+
+  /* Formulario — panel sutil (de C) con input minimalista (de A) */
+  .hero-panel {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 2.5rem;
+  }
+
+  .panel-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  .panel-title {
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: normal;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+
+  .panel-sub {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 1.75rem;
+    line-height: 1.55;
+  }
+
+  /* Form inline minimalista (estilo A pero en oscuro) */
+  .email-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+
+  .email-form input {
+    padding: 0.9rem 1rem;
+    background: rgba(255,255,255,0.06);
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    color: var(--white);
+    font-size: 0.9rem;
+    font-family: Arial, sans-serif;
+    outline: none;
+    transition: background 0.2s;
+  }
+
+  .email-form input::placeholder { color: rgba(255,255,255,0.3); }
+  .email-form input:focus { background: rgba(255,255,255,0.09); }
+
+  .email-form button {
+    padding: 0.9rem 1rem;
+    background: var(--white);
+    color: var(--navy);
+    border: none;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: bold;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .email-form button:hover {
+    background: var(--gold-light);
+    color: var(--navy);
+  }
+
+  .panel-note {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.28);
+    margin-top: 0.75rem;
+    text-align: center;
+  }
+
+  /* ── SECCIONES — estilo A (blanco, espaciosas) ── */
+  .section-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 5.5rem 2.5rem;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-family: Georgia, serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: normal;
+    color: var(--navy);
+    margin-bottom: 3.5rem;
+    text-wrap: balance;
+  }
+
+  /* ── PASOS — números grandes muted (de A) ── */
+  #como { background: var(--gray-light); }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  .step-number {
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    color: #D8D5D0;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .step h3 {
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .step p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+
+  /* ── CATÁLOGO — tarjetas finas (de A) ── */
+  #catalogo { background: var(--white); }
+
+  .catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .book-card {
+    border: 1px solid var(--gray-border);
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s;
+  }
+
+  .book-card:hover { border-color: var(--gold); }
+
+  .book-cover {
+    aspect-ratio: 3/4;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.25rem 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .book-cover::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+  }
+
+  .book-cover-cat {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .book-cover-title {
+    font-family: Georgia, serif;
+    font-size: 0.82rem;
+    font-weight: normal;
+    color: var(--white);
+    line-height: 1.35;
+  }
+
+  .book-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0.4rem;
+  }
+
+  .book-category {
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .book-title {
+    font-family: Georgia, serif;
+    font-size: 0.88rem;
+    font-weight: normal;
+    color: var(--navy);
+    line-height: 1.4;
+    flex: 1;
+  }
+
+  .book-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--gray-border);
+    margin-top: 0.25rem;
+  }
+
+  .book-price { font-size: 0.9rem; color: var(--text); }
+
+  /* Botón minimal de A */
+  .btn-get {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    text-decoration: none;
+    border: 1px solid var(--navy);
+    padding: 0.3rem 0.65rem;
+    transition: all 0.2s;
+  }
+
+  .btn-get:hover { background: var(--navy); color: var(--white); }
+
+  /* ── POR QUÉ ── */
+  #porque { background: var(--gray-light); }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem;
+  }
+
+  .why-item h3 {
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    font-weight: normal;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gray-border);
+  }
+
+  .why-item p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--gray-border);
+    padding: 2.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--navy);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 0.78rem;
+    color: #999;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-legal { font-size: 0.75rem; color: #bbb; max-width: 540px; line-height: 1.5; }
+  .footer-copy { font-size: 0.75rem; color: #ccc; }
+
+  /* ── HAMBURGER ── */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 101;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--white);
+    transition: transform 0.28s ease, opacity 0.2s ease;
+  }
+
+  nav.scrolled .nav-toggle span { background: var(--navy); }
+
+  nav.open .nav-toggle span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  nav.open .nav-toggle span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  nav.open .nav-toggle span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1.25rem 1.5rem; }
+    nav.scrolled { padding: 0.85rem 1.5rem; }
+
+    .nav-toggle { display: flex; }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    nav.scrolled .nav-links {
+      background: var(--white);
+      border-top-color: var(--gray-border);
+      border-bottom: 1px solid var(--gray-border);
+    }
+
+    nav.open .nav-links { display: flex; }
+
+    .nav-links a {
+      padding: 1rem 1.5rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.85);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      letter-spacing: 0.12em;
+    }
+
+    nav.scrolled .nav-links a {
+      color: var(--text);
+      border-bottom-color: var(--gray-border);
+    }
+
+    .nav-links li:last-child a { border-bottom: none; }
+    .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.06); }
+    nav.scrolled .nav-links a:hover { color: var(--gold); background: transparent; }
+
+    #hero { padding: 6.5rem 1.5rem 3.5rem; min-height: auto; }
+    #hero::after { display: none; }
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-panel { padding: 1.75rem; }
+
+    .steps, .why-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+    .section-inner { padding: 3.5rem 1.5rem; }
+    .footer-links { flex-wrap: wrap; gap: 1rem; justify-content: center; }
+  }
+
+  @media (max-width: 420px) {
+    #hero h1 { font-size: 2.4rem; }
+    .catalog-grid { gap: 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#" class="logo">Pocketlibros</a>
+  <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="#catalogo">Catálogo</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- HERO: full-screen navy de C -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="hero-kicker">Ebooks cortos en español</p>
+      <h1>Conocimiento<br>accionable.<br><em>Sin relleno.</em></h1>
+      <p class="hero-sub">Guías de menos de 60 páginas sobre trading, liderazgo, salud y operaciones. Lee en una tarde, aplica esa misma noche.</p>
+      <a href="#catalogo" class="hero-scroll">Explorar catálogo</a>
+    </div>
+    <div class="hero-panel">
+      <span class="panel-label">Primer ebook gratis</span>
+      <p class="panel-title">Descarga sin costo</p>
+      <p class="panel-sub">Ingresa tu correo y elige el título que necesitas hoy.</p>
+      <form class="email-form" onsubmit="return false;">
+        <input type="email" placeholder="tu@correo.com" aria-label="Email">
+        <button type="submit">Quiero mi ebook gratis →</button>
+      </form>
+      <p class="panel-note">Sin spam. Sin suscripciones.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIONES: limpio blanco de A -->
+<section id="como">
+  <div class="section-inner">
+    <p class="section-label">El proceso</p>
+    <h2 class="section-title">Cómo funciona</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Elige</h3>
+        <p>Selecciona el tema que necesitas dominar hoy. Cada libro resuelve un problema específico, sin divagaciones.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Descarga</h3>
+        <p>Pago simple vía Gumroad. Recibes tu PDF en segundos, sin suscripciones ni cuentas obligatorias.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Aplica</h3>
+        <p>Cada libro termina con acciones concretas. No teoría — pasos que ejecutas de inmediato.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="catalogo">
+  <div class="section-inner">
+    <p class="section-label">Colección actual</p>
+    <h2 class="section-title">Catálogo</h2>
+    <div class="catalog-grid">
+
+      <div class="book-card">
+        <div class="book-cover">
+          <span class="book-cover-cat">Trading</span>
+          <span class="book-cover-title">Domina tu Ansiedad al Invertir</span>
+        </div>
+        <div class="book-info">
+          <span class="book-category">Trading</span>
+          <p class="book-title">Domina tu Ansiedad al Invertir</p>
+          <div class="book-footer">
+            <span class="book-price">USD 8</span>
+            <a href="#" class="btn-get">Obtener</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover">
+          <span class="book-cover-cat">Trading</span>
+          <span class="book-cover-title">Trading para Principiantes: Las 5 Reglas que Nadie te Dice</span>
+        </div>
+        <div class="book-info">
+          <span class="book-category">Trading</span>
+          <p class="book-title">Trading para Principiantes: Las 5 Reglas que Nadie te Dice</p>
+          <div class="book-footer">
+            <span class="book-price">USD 8</span>
+            <a href="#" class="btn-get">Obtener</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover">
+          <span class="book-cover-cat">Operaciones</span>
+          <span class="book-cover-title">Supply Chain en Crisis</span>
+        </div>
+        <div class="book-info">
+          <span class="book-category">Operaciones</span>
+          <p class="book-title">Supply Chain en Crisis</p>
+          <div class="book-footer">
+            <span class="book-price">USD 8</span>
+            <a href="#" class="btn-get">Obtener</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover">
+          <span class="book-cover-cat">Liderazgo</span>
+          <span class="book-cover-title">Lidera sin Cargo</span>
+        </div>
+        <div class="book-info">
+          <span class="book-category">Liderazgo</span>
+          <p class="book-title">Lidera sin Cargo</p>
+          <div class="book-footer">
+            <span class="book-price">USD 8</span>
+            <a href="#" class="btn-get">Obtener</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover">
+          <span class="book-cover-cat">Salud</span>
+          <span class="book-cover-title">Ayuno Intermitente: Protocolo Simple</span>
+        </div>
+        <div class="book-info">
+          <span class="book-category">Salud</span>
+          <p class="book-title">Ayuno Intermitente: Protocolo Simple</p>
+          <div class="book-footer">
+            <span class="book-price">USD 8</span>
+            <a href="#" class="btn-get">Obtener</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover">
+          <span class="book-cover-cat">Operaciones</span>
+          <span class="book-cover-title">KPIs que Importan</span>
+        </div>
+        <div class="book-info">
+          <span class="book-category">Operaciones</span>
+          <p class="book-title">KPIs que Importan</p>
+          <div class="book-footer">
+            <span class="book-price">USD 8</span>
+            <a href="#" class="btn-get">Obtener</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover">
+          <span class="book-cover-cat">Liderazgo</span>
+          <span class="book-cover-title">El Líder que Escucha</span>
+        </div>
+        <div class="book-info">
+          <span class="book-category">Liderazgo</span>
+          <p class="book-title">El Líder que Escucha</p>
+          <div class="book-footer">
+            <span class="book-price">USD 8</span>
+            <a href="#" class="btn-get">Obtener</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover">
+          <span class="book-cover-cat">Salud</span>
+          <span class="book-cover-title">Energía sin Cafeína</span>
+        </div>
+        <div class="book-info">
+          <span class="book-category">Salud</span>
+          <p class="book-title">Energía sin Cafeína</p>
+          <div class="book-footer">
+            <span class="book-price">USD 8</span>
+            <a href="#" class="btn-get">Obtener</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="nosotros" style="background: var(--gray-light);">
+  <div class="section-inner">
+      <p class="section-label">Por qué Pocket</p>
+      <h2 class="section-title">Lo que nos diferencia</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>Corto por diseño</h3>
+          <p>Menos de 60 páginas. Cada libro cubre un solo tema con profundidad suficiente para actuar, sin capítulos de relleno que nunca terminas.</p>
+        </div>
+        <div class="why-item">
+          <h3>100% accionable</h3>
+          <p>Cada título termina con un bloque de acciones concretas. No basta con entender — tienes que poder ejecutar.</p>
+        </div>
+        <div class="why-item">
+          <h3>Precio justo</h3>
+          <p>USD 8 por título. Sin suscripción. Sin biblioteca que nunca lees. Pagas solo lo que vas a usar.</p>
+        </div>
+      </div>
+  </div>
+</section>
+
+<footer id="contacto">
+  <span class="footer-logo">Pocketlibros</span>
+  <ul class="footer-links">
+    <li><a href="#">Términos</a></li>
+    <li><a href="#">Privacidad</a></li>
+    <li><a href="#">Contacto</a></li>
+  </ul>
+  <p class="footer-legal">Contenido educativo. No constituye asesoría financiera ni profesional.</p>
+  <p class="footer-copy">© 2026 Pocketlibros.cl</p>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  const toggle = nav.querySelector('.nav-toggle');
+
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  });
+
+  nav.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Abrir menú');
+    });
+  });
+</script>
+
+</body>
+</html>

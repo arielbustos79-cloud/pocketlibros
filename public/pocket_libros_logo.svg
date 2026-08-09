@@ -1,0 +1,48 @@
+<svg viewBox="0 0 195 72" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pocket Libros">
+  <title>Pocket Libros</title>
+  <defs>
+    <linearGradient id="gp" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#CAA42E"/>
+      <stop offset="55%" stop-color="#B8952A"/>
+      <stop offset="100%" stop-color="#9C7D1E"/>
+    </linearGradient>
+    <linearGradient id="gs" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5EACC" stop-opacity="0.45"/>
+      <stop offset="65%" stop-color="#F5EACC" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="lc">
+      <path d="M4,14 L33,10 L33,61 L4,65 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- Shadow -->
+  <ellipse cx="35" cy="69" rx="27" ry="2.8" fill="#0D2B4E" opacity="0.12"/>
+
+  <!-- Left page -->
+  <path d="M4,14 L33,10 L33,61 L4,65 Z" fill="#FAFAF8" stroke="#D6D3CE" stroke-width="0.7"/>
+
+  <!-- Wave lines -->
+  <g clip-path="url(#lc)" fill="none" stroke="#0D2B4E" stroke-width="1.1" stroke-linecap="round" opacity="0.28">
+    <path d="M8,21 C13,19 18,23 23,21 C27,19 31,21 32,21"/>
+    <path d="M8,27 C13,25 18,29 23,27 C27,25 31,27 32,27"/>
+    <path d="M8,33 C13,31 18,35 23,33 C27,31 31,33 32,33"/>
+    <path d="M8,39 C13,37 18,41 23,39 C27,37 31,39 32,39"/>
+    <path d="M8,45 C13,43 18,47 23,45 C27,43 31,45 32,45"/>
+    <path d="M8,51 C13,49 18,53 23,51 C27,49 31,51 32,51"/>
+  </g>
+
+  <!-- Right page (gold) -->
+  <path d="M37,10 L64,14 L64,65 L37,61 Z" fill="url(#gp)"/>
+  <path d="M37,10 L50,11.5 L50,61 L37,61 Z" fill="url(#gs)"/>
+
+  <!-- Spine -->
+  <rect x="32" y="9" width="6" height="53" rx="1.5" fill="#0D2B4E"/>
+
+  <!-- Base curve -->
+  <path d="M4,65 Q35,75 64,65" fill="none" stroke="#0D2B4E" stroke-width="2.2" stroke-linecap="round"/>
+
+  <!-- Text -->
+  <text x="80" y="30" font-family="Georgia,'Times New Roman',serif" font-size="21" font-weight="normal" fill="#6B8EC2">Pocket</text>
+  <line x1="80" y1="37" x2="192" y2="37" stroke="#B8952A" stroke-width="1.1"/>
+  <text x="80" y="53" font-family="Georgia,'Times New Roman',serif" font-size="21" font-weight="normal" fill="#6B8EC2">Libros</text>
+</svg>

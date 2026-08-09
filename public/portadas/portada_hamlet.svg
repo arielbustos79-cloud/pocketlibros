@@ -1,0 +1,47 @@
+<svg viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="900" fill="#0D2B4E"/>
+  <!-- Misty castle in background (very dim) -->
+  <g opacity="0.12" fill="#FFFFFF">
+    <!-- Castle wall -->
+    <rect x="80" y="340" width="440" height="200"/>
+    <!-- Towers -->
+    <rect x="60" y="280" width="80" height="260"/>
+    <rect x="460" y="280" width="80" height="260"/>
+    <!-- Battlements left tower -->
+    <rect x="60" y="265" width="18" height="20"/>
+    <rect x="86" y="265" width="18" height="20"/>
+    <rect x="112" y="265" width="18" height="20"/>
+    <!-- Battlements right tower -->
+    <rect x="460" y="265" width="18" height="20"/>
+    <rect x="486" y="265" width="18" height="20"/>
+    <rect x="512" y="265" width="18" height="20"/>
+    <!-- Gate -->
+    <path d="M260,540 L260,440 Q300,400 340,440 L340,540 Z" fill="#0D2B4E"/>
+  </g>
+  <!-- Fog / mist layer -->
+  <rect x="0" y="380" width="600" height="160" fill="#0D2B4E" opacity="0.5"/>
+  <!-- Skull - geometric, centered -->
+  <!-- Cranium -->
+  <ellipse cx="300" cy="290" rx="110" ry="100" fill="#FFFFFF" opacity="0.88"/>
+  <!-- Eye sockets -->
+  <ellipse cx="265" cy="290" rx="28" ry="32" fill="#0D2B4E"/>
+  <ellipse cx="335" cy="290" rx="28" ry="32" fill="#0D2B4E"/>
+  <!-- Nasal cavity -->
+  <path d="M291,335 L309,335 L300,365 Z" fill="#0D2B4E"/>
+  <!-- Jaw / teeth row -->
+  <rect x="220" y="375" width="160" height="28" rx="4" fill="#FFFFFF" opacity="0.88"/>
+  <line x1="250" y1="375" x2="250" y2="403" stroke="#0D2B4E" stroke-width="2"/>
+  <line x1="272" y1="375" x2="272" y2="403" stroke="#0D2B4E" stroke-width="2"/>
+  <line x1="294" y1="375" x2="294" y2="403" stroke="#0D2B4E" stroke-width="2"/>
+  <line x1="316" y1="375" x2="316" y2="403" stroke="#0D2B4E" stroke-width="2"/>
+  <line x1="338" y1="375" x2="338" y2="403" stroke="#0D2B4E" stroke-width="2"/>
+  <!-- Zygomatic arches -->
+  <rect x="190" y="320" width="30" height="22" rx="4" fill="#FFFFFF" opacity="0.88"/>
+  <rect x="380" y="320" width="30" height="22" rx="4" fill="#FFFFFF" opacity="0.88"/>
+  <!-- Text area -->
+  <line x1="50" y1="638" x2="120" y2="638" stroke="#B8952A" stroke-width="1.5"/>
+  <text x="50" y="685" font-family="Georgia,'Times New Roman',serif" font-size="52" fill="#FFFFFF">Hamlet</text>
+  <text x="50" y="740" font-family="Georgia,'Times New Roman',serif" font-size="12" fill="#B8952A" letter-spacing="4">CLÁSICO</text>
+  <line x1="50" y1="855" x2="550" y2="855" stroke="#B8952A" stroke-width="0.5" opacity="0.3"/>
+  <text x="300" y="872" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#B8952A" letter-spacing="5" text-anchor="middle">POCKET LIBROS</text>
+</svg>

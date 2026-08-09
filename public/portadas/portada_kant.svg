@@ -1,0 +1,46 @@
+<svg viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="900" fill="#070E18"/>
+  <!-- Subtle grid (ordered reason) -->
+  <g stroke="#FFFFFF" stroke-width="0.2" opacity="0.04">
+    <line x1="0" y1="150" x2="600" y2="150"/>
+    <line x1="0" y1="250" x2="600" y2="250"/>
+    <line x1="0" y1="350" x2="600" y2="350"/>
+    <line x1="0" y1="450" x2="600" y2="450"/>
+    <line x1="0" y1="550" x2="600" y2="550"/>
+    <line x1="120" y1="0" x2="120" y2="600"/>
+    <line x1="240" y1="0" x2="240" y2="600"/>
+    <line x1="360" y1="0" x2="360" y2="600"/>
+    <line x1="480" y1="0" x2="480" y2="600"/>
+  </g>
+  <!-- Input ray (white, from left) -->
+  <line x1="28" y1="315" x2="248" y2="315" stroke="#FFFFFF" stroke-width="2.4" opacity="0.82"/>
+  <!-- Prism (equilateral triangle, apex top-center) -->
+  <!-- Vertices: apex (300, 168), bottom-left (218, 462), bottom-right (382, 462) -->
+  <path d="M218,462 L382,462 L300,168 Z" fill="#FFFFFF" opacity="0.05"/>
+  <path d="M218,462 L382,462 L300,168 Z" fill="none" stroke="#FFFFFF" stroke-width="2.2" opacity="0.68"/>
+  <!-- Refracted spectrum rays exiting right face of prism -->
+  <!-- Entry approximately at (362, 290) on right face -->
+  <g stroke-width="1.8" stroke-linecap="round">
+    <line x1="355" y1="284" x2="558" y2="148" stroke="#F8F4EC" opacity="0.68"/>
+    <line x1="357" y1="291" x2="553" y2="194" stroke="#F2E8D0" opacity="0.68"/>
+    <line x1="359" y1="298" x2="546" y2="238" stroke="#E8D8A8" opacity="0.7"/>
+    <line x1="361" y1="305" x2="542" y2="278" stroke="#D8BC70" opacity="0.74"/>
+    <line x1="363" y1="312" x2="542" y2="318" stroke="#B8952A" opacity="0.82"/>
+    <line x1="365" y1="319" x2="536" y2="360" stroke="#A07A20" opacity="0.7"/>
+    <line x1="367" y1="326" x2="526" y2="400" stroke="#886215" opacity="0.65"/>
+    <line x1="369" y1="333" x2="514" y2="440" stroke="#6A4C10" opacity="0.58"/>
+  </g>
+  <!-- Glow at refraction point -->
+  <circle cx="360" cy="308" r="18" fill="#B8952A" opacity="0.1"/>
+  <circle cx="360" cy="308" r="8" fill="#B8952A" opacity="0.14"/>
+  <!-- Interior prism glow (where light passes through) -->
+  <path d="M248,315 Q290,295 355,308 Q300,330 248,315 Z" fill="#B8952A" opacity="0.04"/>
+  <!-- Text area -->
+  <line x1="50" y1="635" x2="120" y2="635" stroke="#B8952A" stroke-width="1.5"/>
+  <text x="50" y="671" font-family="Georgia,'Times New Roman',serif" font-size="37" fill="#FFFFFF">Crítica de la</text>
+  <text x="50" y="714" font-family="Georgia,'Times New Roman',serif" font-size="37" fill="#FFFFFF">Razón Pura</text>
+  <text x="50" y="750" font-family="Georgia,'Times New Roman',serif" font-size="15" fill="#B8952A" letter-spacing="2">Kant</text>
+  <text x="50" y="782" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#B8952A" letter-spacing="4">GRANDES PENSADORES</text>
+  <line x1="50" y1="855" x2="550" y2="855" stroke="#B8952A" stroke-width="0.5" opacity="0.3"/>
+  <text x="300" y="872" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#B8952A" letter-spacing="5" text-anchor="middle">POCKET LIBROS</text>
+</svg>

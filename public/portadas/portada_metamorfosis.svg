@@ -1,0 +1,41 @@
+<svg viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="900" fill="#0D2B4E"/>
+  <!-- Human shadow (left side, fading) -->
+  <ellipse cx="220" cy="540" rx="55" ry="15" fill="#000" opacity="0.3"/>
+  <!-- Human silhouette (slightly faded, left side) -->
+  <circle cx="220" cy="240" r="45" fill="#FFFFFF" opacity="0.3"/>
+  <path d="M175,290 Q168,430 200,480 Q220,495 240,480 Q272,430 265,290 Z" fill="#FFFFFF" opacity="0.3"/>
+  <!-- Transition zone (center shadow) -->
+  <rect x="240" y="160" width="60" height="400" fill="#0D2B4E" opacity="0.6"/>
+  <!-- Insect silhouette emerging (gold/dark, right side) -->
+  <!-- Body segments -->
+  <ellipse cx="360" cy="350" rx="35" ry="55" fill="#B8952A" opacity="0.85"/>
+  <ellipse cx="360" cy="285" rx="25" ry="30" fill="#B8952A" opacity="0.85"/>
+  <ellipse cx="360" cy="415" rx="28" ry="38" fill="#B8952A" opacity="0.7"/>
+  <!-- Wings -->
+  <path d="M395,310 Q460,260 480,310 Q460,360 395,360 Z" fill="#B8952A" opacity="0.4"/>
+  <path d="M325,310 Q260,260 240,310 Q260,360 325,360 Z" fill="#B8952A" opacity="0.4"/>
+  <!-- Antenna -->
+  <line x1="348" y1="258" x2="320" y2="210" stroke="#B8952A" stroke-width="1.5" opacity="0.7"/>
+  <line x1="372" y1="258" x2="395" y2="210" stroke="#B8952A" stroke-width="1.5" opacity="0.7"/>
+  <circle cx="320" cy="208" r="4" fill="#B8952A" opacity="0.7"/>
+  <circle cx="395" cy="208" r="4" fill="#B8952A" opacity="0.7"/>
+  <!-- Legs -->
+  <g stroke="#B8952A" stroke-width="1.5" opacity="0.6">
+    <line x1="325" y1="330" x2="275" y2="305"/>
+    <line x1="325" y1="355" x2="275" y2="360"/>
+    <line x1="325" y1="380" x2="278" y2="415"/>
+    <line x1="395" y1="330" x2="445" y2="305"/>
+    <line x1="395" y1="355" x2="445" y2="360"/>
+    <line x1="395" y1="380" x2="442" y2="415"/>
+  </g>
+  <!-- Ground shadow for insect -->
+  <ellipse cx="360" cy="540" rx="60" ry="12" fill="#000" opacity="0.25"/>
+  <!-- Text area -->
+  <line x1="50" y1="638" x2="120" y2="638" stroke="#B8952A" stroke-width="1.5"/>
+  <text x="50" y="678" font-family="Georgia,'Times New Roman',serif" font-size="38" fill="#FFFFFF">La</text>
+  <text x="50" y="724" font-family="Georgia,'Times New Roman',serif" font-size="38" fill="#FFFFFF">Metamorfosis</text>
+  <text x="50" y="770" font-family="Georgia,'Times New Roman',serif" font-size="12" fill="#B8952A" letter-spacing="4">CLÁSICO</text>
+  <line x1="50" y1="855" x2="550" y2="855" stroke="#B8952A" stroke-width="0.5" opacity="0.3"/>
+  <text x="300" y="872" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#B8952A" letter-spacing="5" text-anchor="middle">POCKET LIBROS</text>
+</svg>

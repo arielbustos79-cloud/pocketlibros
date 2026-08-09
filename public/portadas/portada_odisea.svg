@@ -1,0 +1,41 @@
+<svg viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="900" fill="#0D2B4E"/>
+  <!-- Stars -->
+  <g fill="#FFFFFF">
+    <circle cx="100" cy="120" r="1.5" opacity="0.8"/>
+    <circle cx="200" cy="80" r="2" opacity="0.9"/>
+    <circle cx="350" cy="100" r="1.5" opacity="0.7"/>
+    <circle cx="450" cy="140" r="2" opacity="0.8"/>
+    <circle cx="520" cy="90" r="1.5" opacity="0.6"/>
+    <circle cx="60" cy="200" r="1" opacity="0.7"/>
+    <circle cx="480" cy="200" r="1.5" opacity="0.8"/>
+    <circle cx="160" cy="170" r="1" opacity="0.6"/>
+  </g>
+  <!-- Constellation lines -->
+  <g stroke="#B8952A" stroke-width="0.6" opacity="0.3">
+    <line x1="200" y1="80" x2="350" y2="100"/>
+    <line x1="350" y1="100" x2="450" y2="140"/>
+    <line x1="100" y1="120" x2="200" y2="80"/>
+  </g>
+  <!-- Ocean - stormy waves -->
+  <path d="M0,420 Q60,380 120,420 Q180,460 240,420 Q300,380 360,420 Q420,460 480,420 Q540,380 600,420 L600,620 L0,620 Z" fill="#1A4070" opacity="0.6"/>
+  <path d="M0,450 Q80,410 160,450 Q240,490 320,450 Q400,410 480,450 Q540,430 600,450 L600,620 L0,620 Z" fill="#0D2B4E" opacity="0.8"/>
+  <!-- Wave crests -->
+  <path d="M0,420 Q60,380 120,420 Q180,460 240,420 Q300,380 360,420 Q420,460 480,420 Q540,380 600,420" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3"/>
+  <path d="M0,450 Q80,410 160,450 Q240,490 320,450 Q400,410 480,450 Q540,430 600,450" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.2"/>
+  <!-- Ship silhouette -->
+  <!-- Hull -->
+  <path d="M160,400 Q300,380 440,400 L420,440 Q300,460 180,440 Z" fill="#FFFFFF" opacity="0.8"/>
+  <!-- Mast -->
+  <line x1="300" y1="240" x2="300" y2="400" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.8"/>
+  <!-- Crossbar -->
+  <line x1="230" y1="290" x2="370" y2="290" stroke="#FFFFFF" stroke-width="2.5" opacity="0.7"/>
+  <!-- Main sail -->
+  <path d="M234,293 Q300,350 300,398 Q300,350 366,293 Z" fill="#FFFFFF" opacity="0.7"/>
+  <!-- Text area -->
+  <line x1="50" y1="638" x2="120" y2="638" stroke="#B8952A" stroke-width="1.5"/>
+  <text x="50" y="685" font-family="Georgia,'Times New Roman',serif" font-size="48" fill="#FFFFFF">La Odisea</text>
+  <text x="50" y="740" font-family="Georgia,'Times New Roman',serif" font-size="12" fill="#B8952A" letter-spacing="4">CLÁSICO</text>
+  <line x1="50" y1="855" x2="550" y2="855" stroke="#B8952A" stroke-width="0.5" opacity="0.3"/>
+  <text x="300" y="872" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#B8952A" letter-spacing="5" text-anchor="middle">POCKET LIBROS</text>
+</svg>

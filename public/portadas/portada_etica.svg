@@ -1,0 +1,49 @@
+<svg viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="900" fill="#0D2B4E"/>
+  <g fill="#FFFFFF" opacity="0.4">
+    <circle cx="80" cy="100" r="1.5"/>
+    <circle cx="180" cy="60" r="1"/>
+    <circle cx="360" cy="80" r="2"/>
+    <circle cx="480" cy="120" r="1.5"/>
+    <circle cx="520" cy="60" r="1"/>
+    <circle cx="130" cy="200" r="1"/>
+    <circle cx="550" cy="195" r="1.5"/>
+    <circle cx="60" cy="310" r="1"/>
+  </g>
+  <!-- Constellation lines -->
+  <line x1="360" y1="80" x2="480" y2="120" stroke="#FFFFFF" stroke-width="0.3" opacity="0.08"/>
+  <line x1="80" y1="100" x2="180" y2="60" stroke="#FFFFFF" stroke-width="0.3" opacity="0.08"/>
+  <!-- Balance stand -->
+  <rect x="296" y="300" width="8" height="190" fill="#B8952A" opacity="0.48"/>
+  <!-- Fulcrum triangle -->
+  <path d="M258,490 L300,435 L342,490 Z" fill="#B8952A" opacity="0.42"/>
+  <rect x="232" y="488" width="136" height="10" rx="2" fill="#B8952A" opacity="0.38"/>
+  <rect x="195" y="497" width="210" height="15" rx="2" fill="#B8952A" opacity="0.28"/>
+  <!-- Scale beam (horizontal = equilibrium) -->
+  <rect x="118" y="273" width="364" height="8" rx="4" fill="#B8952A" opacity="0.68"/>
+  <!-- Pivot -->
+  <circle cx="300" cy="277" r="10" fill="#B8952A" opacity="0.58"/>
+  <circle cx="300" cy="277" r="5" fill="#0D2B4E"/>
+  <!-- Left chain -->
+  <line x1="158" y1="281" x2="150" y2="360" stroke="#B8952A" stroke-width="1.6" opacity="0.52"/>
+  <line x1="150" y1="360" x2="144" y2="420" stroke="#B8952A" stroke-width="1.6" opacity="0.52"/>
+  <!-- Right chain -->
+  <line x1="442" y1="281" x2="450" y2="360" stroke="#B8952A" stroke-width="1.6" opacity="0.52"/>
+  <line x1="450" y1="360" x2="456" y2="420" stroke="#B8952A" stroke-width="1.6" opacity="0.52"/>
+  <!-- Left pan -->
+  <path d="M88,420 Q144,436 200,420" fill="none" stroke="#B8952A" stroke-width="2" opacity="0.58"/>
+  <ellipse cx="144" cy="420" rx="56" ry="8" fill="#B8952A" opacity="0.12"/>
+  <!-- Right pan -->
+  <path d="M400,420 Q456,436 512,420" fill="none" stroke="#B8952A" stroke-width="2" opacity="0.58"/>
+  <ellipse cx="456" cy="420" rx="56" ry="8" fill="#B8952A" opacity="0.12"/>
+  <!-- Subtle glow -->
+  <ellipse cx="300" cy="350" rx="180" ry="100" fill="#B8952A" opacity="0.03"/>
+  <!-- Text area -->
+  <line x1="50" y1="638" x2="120" y2="638" stroke="#B8952A" stroke-width="1.5"/>
+  <text x="50" y="678" font-family="Georgia,'Times New Roman',serif" font-size="39" fill="#FFFFFF">Ética a</text>
+  <text x="50" y="722" font-family="Georgia,'Times New Roman',serif" font-size="39" fill="#FFFFFF">Nicómaco</text>
+  <text x="50" y="758" font-family="Georgia,'Times New Roman',serif" font-size="15" fill="#B8952A" letter-spacing="2">Aristóteles</text>
+  <text x="50" y="790" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#B8952A" letter-spacing="4">GRANDES PENSADORES</text>
+  <line x1="50" y1="855" x2="550" y2="855" stroke="#B8952A" stroke-width="0.5" opacity="0.3"/>
+  <text x="300" y="872" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#B8952A" letter-spacing="5" text-anchor="middle">POCKET LIBROS</text>
+</svg>

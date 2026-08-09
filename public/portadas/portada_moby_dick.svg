@@ -1,0 +1,44 @@
+<svg viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="900" fill="#0D2B4E"/>
+  <!-- Deep ocean -->
+  <rect x="0" y="400" width="600" height="240" fill="#071628"/>
+  <!-- Ocean surface -->
+  <path d="M0,400 Q75,375 150,400 Q225,425 300,400 Q375,375 450,400 Q525,425 600,400 L600,420 Q525,445 450,420 Q375,395 300,420 Q225,445 150,420 Q75,395 0,420 Z" fill="#1A4070" opacity="0.8"/>
+  <!-- Water disturbance / wake from whale -->
+  <path d="M100,430 Q200,415 300,430 Q400,445 500,430" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3"/>
+  <path d="M150,445 Q250,435 350,445 Q430,455 480,445" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.2"/>
+  <!-- Foam/spray at whale emergence -->
+  <g fill="#FFFFFF" opacity="0.5">
+    <ellipse cx="290" cy="398" rx="40" ry="12"/>
+    <ellipse cx="310" cy="392" rx="28" ry="8"/>
+    <ellipse cx="270" cy="395" rx="22" ry="7"/>
+  </g>
+  <!-- Whale tail (fluke) - white, rising from water -->
+  <!-- Left fluke -->
+  <path d="M150,390 Q200,280 260,340 Q290,370 300,390" fill="#FFFFFF" opacity="0.92"/>
+  <!-- Right fluke -->
+  <path d="M450,390 Q400,280 340,340 Q310,370 300,390" fill="#FFFFFF" opacity="0.92"/>
+  <!-- Tail notch -->
+  <path d="M280,388 Q300,410 320,388" fill="#0D2B4E"/>
+  <!-- Fluke detail lines -->
+  <path d="M180,360 Q230,320 265,345" fill="none" stroke="#E8E0D0" stroke-width="1.5" opacity="0.4"/>
+  <path d="M420,360 Q370,320 335,345" fill="none" stroke="#E8E0D0" stroke-width="1.5" opacity="0.4"/>
+  <!-- Water depth shading under whale -->
+  <ellipse cx="300" cy="415" rx="120" ry="20" fill="#071628" opacity="0.6"/>
+  <!-- Stars / moon above -->
+  <g fill="#FFFFFF" opacity="0.4">
+    <circle cx="100" cy="150" r="2"/>
+    <circle cx="200" cy="100" r="1.5"/>
+    <circle cx="400" cy="120" r="2"/>
+    <circle cx="500" cy="80" r="1.5"/>
+    <circle cx="150" cy="200" r="1"/>
+    <circle cx="480" cy="180" r="1"/>
+  </g>
+  <circle cx="300" cy="180" r="22" fill="#FFFFFF" opacity="0.15"/>
+  <!-- Text area -->
+  <line x1="50" y1="638" x2="120" y2="638" stroke="#B8952A" stroke-width="1.5"/>
+  <text x="50" y="685" font-family="Georgia,'Times New Roman',serif" font-size="48" fill="#FFFFFF">Moby Dick</text>
+  <text x="50" y="740" font-family="Georgia,'Times New Roman',serif" font-size="12" fill="#B8952A" letter-spacing="4">CLÁSICO</text>
+  <line x1="50" y1="855" x2="550" y2="855" stroke="#B8952A" stroke-width="0.5" opacity="0.3"/>
+  <text x="300" y="872" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#B8952A" letter-spacing="5" text-anchor="middle">POCKET LIBROS</text>
+</svg>

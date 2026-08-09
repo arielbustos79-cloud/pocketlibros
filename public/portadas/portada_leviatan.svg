@@ -1,0 +1,98 @@
+<svg viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="900" fill="#060F1A"/>
+  <g fill="#FFFFFF" opacity="0.28">
+    <circle cx="80" cy="80" r="1"/>
+    <circle cx="150" cy="50" r="1.5"/>
+    <circle cx="460" cy="70" r="1.5"/>
+    <circle cx="530" cy="100" r="1"/>
+    <circle cx="50" cy="160" r="1"/>
+    <circle cx="540" cy="50" r="1"/>
+  </g>
+  <!-- Crown -->
+  <path d="M235,90 L246,48 L270,78 L300,42 L330,78 L354,48 L365,90 Z" fill="#B8952A" opacity="0.58"/>
+  <rect x="230" y="86" width="140" height="16" rx="2" fill="#B8952A" opacity="0.52"/>
+  <!-- Head silhouette -->
+  <ellipse cx="300" cy="158" rx="82" ry="72" fill="#FFFFFF" opacity="0.07"/>
+  <ellipse cx="300" cy="158" rx="82" ry="72" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4"/>
+  <!-- Neck -->
+  <rect x="272" y="222" width="56" height="34" fill="#FFFFFF" opacity="0.05"/>
+  <line x1="272" y1="222" x2="272" y2="256" stroke="#FFFFFF" stroke-width="1.2" opacity="0.3"/>
+  <line x1="328" y1="222" x2="328" y2="256" stroke="#FFFFFF" stroke-width="1.2" opacity="0.3"/>
+  <!-- Body outline -->
+  <path d="M178,256 Q204,244 272,242 L328,242 Q396,244 422,256 L432,520 Q395,530 300,535 Q205,530 168,520 Z" fill="#FFFFFF" opacity="0.05"/>
+  <path d="M178,256 Q204,244 272,242 L328,242 Q396,244 422,256 L432,520 Q395,530 300,535 Q205,530 168,520 Z" fill="none" stroke="#FFFFFF" stroke-width="1.4" opacity="0.38"/>
+  <!-- Left arm outline -->
+  <path d="M178,256 Q132,280 112,345 Q106,385 118,432 L143,427 Q146,385 152,346 Q168,302 202,280" fill="none" stroke="#FFFFFF" stroke-width="1.4" opacity="0.35"/>
+  <!-- Right arm outline -->
+  <path d="M422,256 Q468,280 488,345 Q494,385 482,432 L457,427 Q454,385 448,346 Q432,302 398,280" fill="none" stroke="#FFFFFF" stroke-width="1.4" opacity="0.35"/>
+  <!-- People dots filling head -->
+  <g fill="#B8952A" opacity="0.32">
+    <circle cx="272" cy="138" r="3.5"/><circle cx="287" cy="124" r="3.5"/><circle cx="300" cy="118" r="3.5"/>
+    <circle cx="313" cy="124" r="3.5"/><circle cx="328" cy="138" r="3.5"/>
+    <circle cx="263" cy="158" r="3.5"/><circle cx="280" cy="150" r="3.5"/><circle cx="300" cy="146" r="3.5"/>
+    <circle cx="320" cy="150" r="3.5"/><circle cx="337" cy="158" r="3.5"/>
+    <circle cx="268" cy="178" r="3.5"/><circle cx="286" cy="172" r="3.5"/><circle cx="300" cy="169" r="3.5"/>
+    <circle cx="314" cy="172" r="3.5"/><circle cx="332" cy="178" r="3.5"/>
+    <circle cx="278" cy="198" r="3.5"/><circle cx="294" cy="193" r="3.5"/>
+    <circle cx="306" cy="193" r="3.5"/><circle cx="322" cy="198" r="3.5"/>
+  </g>
+  <!-- People dots filling body (rows) -->
+  <g fill="#B8952A" opacity="0.3">
+    <circle cx="210" cy="270" r="4"/><circle cx="230" cy="270" r="4"/><circle cx="250" cy="270" r="4"/>
+    <circle cx="270" cy="270" r="4"/><circle cx="290" cy="270" r="4"/><circle cx="310" cy="270" r="4"/>
+    <circle cx="330" cy="270" r="4"/><circle cx="350" cy="270" r="4"/><circle cx="370" cy="270" r="4"/>
+    <circle cx="200" cy="292" r="4"/><circle cx="220" cy="292" r="4"/><circle cx="240" cy="292" r="4"/>
+    <circle cx="260" cy="292" r="4"/><circle cx="280" cy="292" r="4"/><circle cx="300" cy="292" r="4"/>
+    <circle cx="320" cy="292" r="4"/><circle cx="340" cy="292" r="4"/><circle cx="360" cy="292" r="4"/>
+    <circle cx="380" cy="292" r="4"/>
+    <circle cx="195" cy="314" r="4"/><circle cx="215" cy="314" r="4"/><circle cx="235" cy="314" r="4"/>
+    <circle cx="255" cy="314" r="4"/><circle cx="275" cy="314" r="4"/><circle cx="295" cy="314" r="4"/>
+    <circle cx="315" cy="314" r="4"/><circle cx="335" cy="314" r="4"/><circle cx="355" cy="314" r="4"/>
+    <circle cx="375" cy="314" r="4"/><circle cx="395" cy="314" r="4"/>
+    <circle cx="192" cy="336" r="4"/><circle cx="212" cy="336" r="4"/><circle cx="232" cy="336" r="4"/>
+    <circle cx="252" cy="336" r="4"/><circle cx="272" cy="336" r="4"/><circle cx="292" cy="336" r="4"/>
+    <circle cx="312" cy="336" r="4"/><circle cx="332" cy="336" r="4"/><circle cx="352" cy="336" r="4"/>
+    <circle cx="372" cy="336" r="4"/><circle cx="392" cy="336" r="4"/>
+    <circle cx="192" cy="358" r="4"/><circle cx="212" cy="358" r="4"/><circle cx="232" cy="358" r="4"/>
+    <circle cx="252" cy="358" r="4"/><circle cx="272" cy="358" r="4"/><circle cx="292" cy="358" r="4"/>
+    <circle cx="312" cy="358" r="4"/><circle cx="332" cy="358" r="4"/><circle cx="352" cy="358" r="4"/>
+    <circle cx="372" cy="358" r="4"/><circle cx="392" cy="358" r="4"/>
+    <circle cx="194" cy="380" r="4"/><circle cx="214" cy="380" r="4"/><circle cx="234" cy="380" r="4"/>
+    <circle cx="254" cy="380" r="4"/><circle cx="274" cy="380" r="4"/><circle cx="294" cy="380" r="4"/>
+    <circle cx="314" cy="380" r="4"/><circle cx="334" cy="380" r="4"/><circle cx="354" cy="380" r="4"/>
+    <circle cx="374" cy="380" r="4"/><circle cx="394" cy="380" r="4"/>
+    <circle cx="198" cy="402" r="4"/><circle cx="218" cy="402" r="4"/><circle cx="238" cy="402" r="4"/>
+    <circle cx="258" cy="402" r="4"/><circle cx="278" cy="402" r="4"/><circle cx="298" cy="402" r="4"/>
+    <circle cx="318" cy="402" r="4"/><circle cx="338" cy="402" r="4"/><circle cx="358" cy="402" r="4"/>
+    <circle cx="378" cy="402" r="4"/><circle cx="398" cy="402" r="4"/>
+    <circle cx="204" cy="424" r="4"/><circle cx="224" cy="424" r="4"/><circle cx="244" cy="424" r="4"/>
+    <circle cx="264" cy="424" r="4"/><circle cx="284" cy="424" r="4"/><circle cx="304" cy="424" r="4"/>
+    <circle cx="324" cy="424" r="4"/><circle cx="344" cy="424" r="4"/><circle cx="364" cy="424" r="4"/>
+    <circle cx="384" cy="424" r="4"/>
+    <circle cx="210" cy="446" r="4"/><circle cx="230" cy="446" r="4"/><circle cx="250" cy="446" r="4"/>
+    <circle cx="270" cy="446" r="4"/><circle cx="290" cy="446" r="4"/><circle cx="310" cy="446" r="4"/>
+    <circle cx="330" cy="446" r="4"/><circle cx="350" cy="446" r="4"/><circle cx="370" cy="446" r="4"/>
+    <circle cx="218" cy="468" r="4"/><circle cx="238" cy="468" r="4"/><circle cx="258" cy="468" r="4"/>
+    <circle cx="278" cy="468" r="4"/><circle cx="298" cy="468" r="4"/><circle cx="318" cy="468" r="4"/>
+    <circle cx="338" cy="468" r="4"/><circle cx="358" cy="468" r="4"/>
+    <circle cx="226" cy="490" r="4"/><circle cx="246" cy="490" r="4"/><circle cx="266" cy="490" r="4"/>
+    <circle cx="286" cy="490" r="4"/><circle cx="306" cy="490" r="4"/><circle cx="326" cy="490" r="4"/>
+    <circle cx="346" cy="490" r="4"/>
+    <circle cx="234" cy="512" r="4"/><circle cx="254" cy="512" r="4"/><circle cx="274" cy="512" r="4"/>
+    <circle cx="294" cy="512" r="4"/><circle cx="314" cy="512" r="4"/><circle cx="334" cy="512" r="4"/>
+  </g>
+  <!-- Face features -->
+  <ellipse cx="276" cy="140" rx="16" ry="10" fill="#030A12" opacity="0.7"/>
+  <ellipse cx="324" cy="140" rx="16" ry="10" fill="#030A12" opacity="0.7"/>
+  <path d="M278,176 Q300,186 322,176" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.38"/>
+  <!-- Ground -->
+  <rect x="0" y="528" width="600" height="110" fill="#030810"/>
+  <path d="M0,528 Q150,512 300,528 Q450,544 600,528 L600,538 Q450,556 300,538 Q150,522 0,538 Z" fill="#1A3A5C" opacity="0.35"/>
+  <!-- Text area -->
+  <line x1="50" y1="638" x2="120" y2="638" stroke="#B8952A" stroke-width="1.5"/>
+  <text x="50" y="684" font-family="Georgia,'Times New Roman',serif" font-size="50" fill="#FFFFFF">Leviatán</text>
+  <text x="50" y="731" font-family="Georgia,'Times New Roman',serif" font-size="15" fill="#B8952A" letter-spacing="2">Hobbes</text>
+  <text x="50" y="763" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#B8952A" letter-spacing="4">GRANDES PENSADORES</text>
+  <line x1="50" y1="855" x2="550" y2="855" stroke="#B8952A" stroke-width="0.5" opacity="0.3"/>
+  <text x="300" y="872" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#B8952A" letter-spacing="5" text-anchor="middle">POCKET LIBROS</text>
+</svg>

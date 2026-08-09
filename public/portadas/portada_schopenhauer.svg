@@ -1,0 +1,44 @@
+<svg viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="900" fill="#0A1628"/>
+  <!-- Swing arc (dashed) -->
+  <path d="M78,318 A280,280 0 0 1 522,318" fill="none" stroke="#B8952A" stroke-width="1" stroke-dasharray="7,9" opacity="0.32"/>
+  <!-- Extreme position markers -->
+  <circle cx="98" cy="290" r="7" fill="none" stroke="#B8952A" stroke-width="1.2" opacity="0.42"/>
+  <circle cx="502" cy="290" r="7" fill="none" stroke="#B8952A" stroke-width="1.2" opacity="0.42"/>
+  <!-- Pendulum frame -->
+  <line x1="190" y1="148" x2="410" y2="148" stroke="#FFFFFF" stroke-width="2" opacity="0.38"/>
+  <line x1="190" y1="134" x2="190" y2="162" stroke="#FFFFFF" stroke-width="2" opacity="0.32"/>
+  <line x1="410" y1="134" x2="410" y2="162" stroke="#FFFFFF" stroke-width="2" opacity="0.32"/>
+  <!-- Pivot point -->
+  <circle cx="300" cy="148" r="9" fill="#B8952A" opacity="0.48"/>
+  <circle cx="300" cy="148" r="4" fill="#0A1628"/>
+  <!-- Pendulum string -->
+  <line x1="300" y1="157" x2="300" y2="462" stroke="#FFFFFF" stroke-width="1.5" opacity="0.58"/>
+  <!-- Pendulum bob -->
+  <circle cx="300" cy="480" r="26" fill="#B8952A" opacity="0.52"/>
+  <circle cx="300" cy="480" r="20" fill="#0A1628"/>
+  <circle cx="300" cy="480" r="14" fill="#B8952A" opacity="0.28"/>
+  <circle cx="300" cy="480" r="4" fill="#B8952A" opacity="0.5"/>
+  <!-- Ghost strings at extremes -->
+  <line x1="300" y1="157" x2="106" y2="448" stroke="#FFFFFF" stroke-width="0.8" stroke-dasharray="5,9" opacity="0.14"/>
+  <line x1="300" y1="157" x2="494" y2="448" stroke="#FFFFFF" stroke-width="0.8" stroke-dasharray="5,9" opacity="0.14"/>
+  <!-- Ghost bobs -->
+  <circle cx="106" cy="462" r="18" fill="none" stroke="#B8952A" stroke-width="0.8" opacity="0.14"/>
+  <circle cx="494" cy="462" r="18" fill="none" stroke="#B8952A" stroke-width="0.8" opacity="0.14"/>
+  <!-- Center axis dashed -->
+  <line x1="300" y1="157" x2="300" y2="540" stroke="#B8952A" stroke-width="0.5" stroke-dasharray="3,7" opacity="0.18"/>
+  <!-- Labels -->
+  <text x="82" y="355" font-family="Georgia,'Times New Roman',serif" font-size="13" fill="#B8952A" opacity="0.52" text-anchor="middle">DOLOR</text>
+  <text x="518" y="355" font-family="Georgia,'Times New Roman',serif" font-size="13" fill="#B8952A" opacity="0.52" text-anchor="middle">TEDIO</text>
+  <!-- Small vertical marks at extremes -->
+  <line x1="68" y1="270" x2="68" y2="310" stroke="#B8952A" stroke-width="1" opacity="0.3"/>
+  <line x1="532" y1="270" x2="532" y2="310" stroke="#B8952A" stroke-width="1" opacity="0.3"/>
+  <!-- Text area -->
+  <line x1="50" y1="635" x2="120" y2="635" stroke="#B8952A" stroke-width="1.5"/>
+  <text x="50" y="669" font-family="Georgia,'Times New Roman',serif" font-size="36" fill="#FFFFFF">El Mundo</text>
+  <text x="50" y="711" font-family="Georgia,'Times New Roman',serif" font-size="36" fill="#FFFFFF">como Voluntad</text>
+  <text x="50" y="748" font-family="Georgia,'Times New Roman',serif" font-size="15" fill="#B8952A" letter-spacing="2">Schopenhauer</text>
+  <text x="50" y="780" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#B8952A" letter-spacing="4">GRANDES PENSADORES</text>
+  <line x1="50" y1="855" x2="550" y2="855" stroke="#B8952A" stroke-width="0.5" opacity="0.3"/>
+  <text x="300" y="872" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#B8952A" letter-spacing="5" text-anchor="middle">POCKET LIBROS</text>
+</svg>

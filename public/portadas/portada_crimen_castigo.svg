@@ -1,0 +1,37 @@
+<svg viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="900" fill="#0A1E35"/>
+  <!-- Staircase lines (perspective) -->
+  <g stroke="#1A4070" stroke-width="1" opacity="0.5">
+    <!-- Left wall lines -->
+    <line x1="100" y1="160" x2="100" y2="560"/>
+    <!-- Stair steps -->
+    <line x1="100" y1="220" x2="300" y2="220"/>
+    <line x1="100" y1="290" x2="320" y2="290"/>
+    <line x1="100" y1="360" x2="340" y2="360"/>
+    <line x1="100" y1="430" x2="360" y2="430"/>
+    <line x1="100" y1="500" x2="380" y2="500"/>
+    <!-- Vertical risers -->
+    <line x1="300" y1="160" x2="300" y2="220"/>
+    <line x1="320" y1="220" x2="320" y2="290"/>
+    <line x1="340" y1="290" x2="340" y2="360"/>
+    <line x1="360" y1="360" x2="360" y2="430"/>
+    <line x1="380" y1="430" x2="380" y2="500"/>
+  </g>
+  <!-- Shadow cast by axe -->
+  <ellipse cx="340" cy="540" rx="80" ry="20" fill="#000" opacity="0.35"/>
+  <!-- Long shadow line -->
+  <path d="M280,360 L380,540" stroke="#000" stroke-width="30" stroke-linecap="round" opacity="0.25"/>
+  <!-- Axe handle -->
+  <line x1="200" y1="520" x2="360" y2="280" stroke="#B8952A" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+  <!-- Axe head -->
+  <path d="M345,268 L390,225 Q420,200 420,240 L420,310 Q420,340 390,330 Z" fill="#FFFFFF" opacity="0.85"/>
+  <!-- Axe edge (sharp highlight) -->
+  <path d="M390,225 Q420,200 420,240 L420,310 Q420,340 390,330" fill="none" stroke="#B8952A" stroke-width="2" opacity="0.6"/>
+  <!-- Text area -->
+  <line x1="50" y1="638" x2="120" y2="638" stroke="#B8952A" stroke-width="1.5"/>
+  <text x="50" y="678" font-family="Georgia,'Times New Roman',serif" font-size="38" fill="#FFFFFF">Crimen</text>
+  <text x="50" y="724" font-family="Georgia,'Times New Roman',serif" font-size="38" fill="#FFFFFF">y Castigo</text>
+  <text x="50" y="770" font-family="Georgia,'Times New Roman',serif" font-size="12" fill="#B8952A" letter-spacing="4">CLÁSICO</text>
+  <line x1="50" y1="855" x2="550" y2="855" stroke="#B8952A" stroke-width="0.5" opacity="0.3"/>
+  <text x="300" y="872" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#B8952A" letter-spacing="5" text-anchor="middle">POCKET LIBROS</text>
+</svg>

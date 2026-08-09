@@ -1,0 +1,40 @@
+<svg viewBox="0 0 70 72" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pocket Libros">
+  <title>Pocket Libros</title>
+  <defs>
+    <linearGradient id="gp2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#CAA42E"/>
+      <stop offset="55%" stop-color="#B8952A"/>
+      <stop offset="100%" stop-color="#9C7D1E"/>
+    </linearGradient>
+    <linearGradient id="gs2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5EACC" stop-opacity="0.45"/>
+      <stop offset="65%" stop-color="#F5EACC" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="lc2">
+      <path d="M3,14 L33,10 L33,61 L3,65 Z"/>
+    </clipPath>
+  </defs>
+
+  <ellipse cx="35" cy="69" rx="28" ry="2.8" fill="#0D2B4E" opacity="0.12"/>
+
+  <!-- Left page -->
+  <path d="M3,14 L33,10 L33,61 L3,65 Z" fill="#FAFAF8" stroke="#D6D3CE" stroke-width="0.7"/>
+  <g clip-path="url(#lc2)" fill="none" stroke="#0D2B4E" stroke-width="1.1" stroke-linecap="round" opacity="0.28">
+    <path d="M7,21 C12,19 17,23 22,21 C26,19 30,21 31,21"/>
+    <path d="M7,27 C12,25 17,29 22,27 C26,25 30,27 31,27"/>
+    <path d="M7,33 C12,31 17,35 22,33 C26,31 30,33 31,33"/>
+    <path d="M7,39 C12,37 17,41 22,39 C26,37 30,39 31,39"/>
+    <path d="M7,45 C12,43 17,47 22,45 C26,43 30,45 31,45"/>
+    <path d="M7,51 C12,49 17,53 22,51 C26,49 30,51 31,51"/>
+  </g>
+
+  <!-- Right page (gold) -->
+  <path d="M37,10 L67,14 L67,65 L37,61 Z" fill="url(#gp2)"/>
+  <path d="M37,10 L50,11.5 L50,61 L37,61 Z" fill="url(#gs2)"/>
+
+  <!-- Spine (gold so visible on dark backgrounds) -->
+  <rect x="32" y="9" width="6" height="53" rx="1.5" fill="#B8952A"/>
+
+  <!-- Base curve -->
+  <path d="M3,65 Q35,75 67,65" fill="none" stroke="#B8952A" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

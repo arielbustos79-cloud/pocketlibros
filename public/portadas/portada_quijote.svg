@@ -1,0 +1,40 @@
+<svg viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="900" fill="#0D2B4E"/>
+  <!-- Sky gradient via overlapping rects -->
+  <rect x="0" y="0" width="600" height="500" fill="#0A2240" opacity="0.5"/>
+  <!-- Landscape / plain -->
+  <path d="M0,500 Q150,480 300,500 Q450,520 600,490 L600,620 L0,620 Z" fill="#0D2B4E"/>
+  <line x1="0" y1="500" x2="600" y2="500" stroke="#FFFFFF" stroke-width="0.8" opacity="0.15"/>
+  <!-- Windmill - distant center -->
+  <!-- Tower -->
+  <rect x="282" y="310" width="36" height="190" fill="#FFFFFF" opacity="0.2"/>
+  <!-- Blades (cross) -->
+  <line x1="300" y1="200" x2="300" y2="420" stroke="#FFFFFF" stroke-width="6" opacity="0.25" stroke-linecap="round"/>
+  <line x1="190" y1="310" x2="410" y2="310" stroke="#FFFFFF" stroke-width="6" opacity="0.25" stroke-linecap="round"/>
+  <!-- Blades diagonal -->
+  <line x1="222" y1="232" x2="378" y2="388" stroke="#FFFFFF" stroke-width="4" opacity="0.18" stroke-linecap="round"/>
+  <line x1="378" y1="232" x2="222" y2="388" stroke="#FFFFFF" stroke-width="4" opacity="0.18" stroke-linecap="round"/>
+  <!-- Windmill hub -->
+  <circle cx="300" cy="310" r="10" fill="#FFFFFF" opacity="0.3"/>
+  <!-- Broken lance -->
+  <line x1="100" y1="480" x2="260" y2="350" stroke="#B8952A" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+  <line x1="260" y1="350" x2="290" y2="330" stroke="#B8952A" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+  <!-- Break mark -->
+  <line x1="252" y1="358" x2="270" y2="340" stroke="#B8952A" stroke-width="2" opacity="0.6"/>
+  <!-- Stars -->
+  <g fill="#FFFFFF" opacity="0.5">
+    <circle cx="120" cy="150" r="2"/>
+    <circle cx="450" cy="100" r="2.5"/>
+    <circle cx="520" cy="200" r="1.5"/>
+    <circle cx="80" cy="220" r="1.5"/>
+    <circle cx="380" cy="160" r="2"/>
+    <circle cx="200" cy="80" r="1.5"/>
+  </g>
+  <!-- Text area -->
+  <line x1="50" y1="638" x2="120" y2="638" stroke="#B8952A" stroke-width="1.5"/>
+  <text x="50" y="678" font-family="Georgia,'Times New Roman',serif" font-size="38" fill="#FFFFFF">Don Quijote</text>
+  <text x="50" y="724" font-family="Georgia,'Times New Roman',serif" font-size="38" fill="#FFFFFF">de la Mancha</text>
+  <text x="50" y="770" font-family="Georgia,'Times New Roman',serif" font-size="12" fill="#B8952A" letter-spacing="4">CLÁSICO</text>
+  <line x1="50" y1="855" x2="550" y2="855" stroke="#B8952A" stroke-width="0.5" opacity="0.3"/>
+  <text x="300" y="872" font-family="Georgia,'Times New Roman',serif" font-size="11" fill="#B8952A" letter-spacing="5" text-anchor="middle">POCKET LIBROS</text>
+</svg>
