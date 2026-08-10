@@ -62,7 +62,7 @@ const steps = [
 const reasons = [
   {
     title: "Corto por diseño",
-    desc: "Menos de 60 páginas. Cada libro cubre un solo tema con profundidad suficiente para actuar, sin capítulos de relleno que nunca terminas.",
+    desc: "Cada libro cubre un solo tema con profundidad suficiente para actuar, sin capítulos de relleno que nunca terminas.",
   },
   {
     title: "100% accionable",
@@ -100,7 +100,7 @@ export default function Home() {
             PL
           </span>
 
-          <div className="relative z-10 max-w-[1060px] mx-auto w-full grid md:grid-cols-[3fr_2fr] gap-10 md:gap-20 items-center">
+          <div className="relative z-10 max-w-[1060px] mx-auto w-full grid md:grid-cols-[3fr_3fr] gap-10 md:gap-16 items-center">
             <div>
               <p className="inline-flex items-center gap-3 text-[0.7rem] tracking-[0.22em] uppercase text-gold mb-8 before:content-[''] before:block before:w-7 before:h-px before:bg-gold">
                 Ebooks cortos en español
@@ -113,8 +113,7 @@ export default function Home() {
                 <em className="not-italic text-gold">Sin relleno aceptable.</em>
               </h1>
               <p className="text-white/60 text-base leading-[1.7] max-w-[460px] mb-10">
-                Guías de menos de 60 páginas sobre trading, liderazgo, salud y
-                operaciones. Lee en una tarde, aplica esa misma noche.
+                Guías sobre trading, liderazgo, salud y operaciones. Lee en una tarde, aplica esa misma noche.
               </p>
               <a
                 href="#catalogo"
@@ -124,7 +123,7 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="border border-white/15 p-8 md:p-10">
+            <div className="border border-white/15 p-8 md:p-12">
               <span className="block text-[0.68rem] tracking-[0.2em] uppercase text-gold mb-2">
                 Primer ebook gratis
               </span>

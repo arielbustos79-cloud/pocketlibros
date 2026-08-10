@@ -46,8 +46,8 @@ export default function Nav() {
         <img
           src="/pocket_libros_logo.svg"
           alt="Pocket Libros"
-          width={116}
-          height={43}
+          width={152}
+          height={56}
           className="hidden md:block"
         />
       </a>
