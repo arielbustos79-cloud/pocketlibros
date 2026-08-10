@@ -1,7 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { createClient } from "@supabase/supabase-js";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+function getSupabase() {
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_ANON_KEY;
+  if (!url || !key) return null;
+  return createClient(url, key);
+}
 
 const DOWNLOAD_LINKS: Record<string, string> = {
   "Hamlet — Shakespeare": "#",
@@ -19,16 +27,25 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Faltan campos requeridos." }, { status: 400 });
     }
 
-    /* Duplicate email check via Vercel KV (fail-open if KV not configured) */
-    if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
-      const { kv } = await import("@vercel/kv");
-      const key = `reg:${email.toLowerCase().trim()}`;
-      const wasNew = await kv.set(key, Date.now(), { nx: true });
-      if (wasNew === null) {
-        return NextResponse.json(
-          { error: "Este correo ya recibió su ebook de bienvenida." },
-          { status: 409 }
-        );
+    const normalizedEmail = email.toLowerCase().trim();
+
+    /* Registro en Supabase con deduplicación por email */
+    const supabase = getSupabase();
+    if (supabase) {
+      const { error: dbError } = await supabase.from("registros").insert({
+        email: normalizedEmail,
+        clasico_elegido: clasico,
+      });
+
+      if (dbError) {
+        if (dbError.code === "23505") {
+          return NextResponse.json(
+            { error: "Ya tienes tu ebook gratuito registrado." },
+            { status: 409 }
+          );
+        }
+        console.error("Supabase error:", dbError);
+        return NextResponse.json({ error: "Error al registrar." }, { status: 500 });
       }
     }
 
@@ -70,7 +87,7 @@ export async function POST(request: NextRequest) {
 
     const notifyHtml = `
 <p><strong>Nuevo registro en Pocket Libros</strong></p>
-<p>Email: <a href="mailto:${email}">${email}</a></p>
+<p>Email: <a href="mailto:${normalizedEmail}">${normalizedEmail}</a></p>
 <p>Clásico elegido: ${clasico}</p>
 `;
 
@@ -78,7 +95,7 @@ export async function POST(request: NextRequest) {
       resend.emails.send({
         from: "Pocket Libros <noreply@longvivia.cl>",
         replyTo: "hola@pocketlibros.cl",
-        to: email,
+        to: normalizedEmail,
         subject: `Tu ebook gratuito: ${clsicoDisplay} — Pocket Libros`,
         html: welcomeHtml,
       }),
@@ -86,7 +103,7 @@ export async function POST(request: NextRequest) {
         from: "Pocket Libros <noreply@longvivia.cl>",
         replyTo: "hola@pocketlibros.cl",
         to: "hola@pocketlibros.cl",
-        subject: `Nuevo registro: ${email} eligió ${clsicoDisplay}`,
+        subject: `Nuevo registro: ${normalizedEmail} eligió ${clsicoDisplay}`,
         html: notifyHtml,
       }),
     ]);
