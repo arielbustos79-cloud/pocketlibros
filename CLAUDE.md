@@ -20,19 +20,20 @@ Este lema aparece en:
 - Footer y materiales de marca
 ---
 ## Stack tecnológico
-El proyecto está en **Next.js**. El HTML estático (`public/index-d.html`) es referencia histórica — no se toca.
+El proyecto está en **Next.js 16**. El HTML estático (`public/index-d.html`) es referencia histórica — no se toca.
 ```
 app/
-  page.tsx          ← página principal (todas las secciones)
-  layout.tsx        ← layout raíz
-  globals.css       ← tokens de color
+  page.tsx              ← página principal (todas las secciones)
+  layout.tsx            ← layout raíz + metadata Open Graph
+  globals.css           ← tokens de color
+  opengraph-image.tsx   ← imagen OG 1200×630px generada con next/og
   api/
     register/
-      route.ts      ← API de registro: Resend + deduplicación Vercel KV
+      route.ts          ← API registro: Supabase (dedup) + Resend (emails)
   _components/
-    Nav.tsx         ← navegación con hamburger + control tamaño fuente A/A+/A++
-    EmailForm.tsx   ← formulario hero (dos pasos)
-    CatalogTabs.tsx ← tabs No Ficción / Ficción con subcategorías
+    Nav.tsx             ← navegación con hamburger + control tamaño fuente A/A+/A++
+    EmailForm.tsx       ← formulario hero (dos pasos, reset en duplicado)
+    CatalogTabs.tsx     ← tabs No Ficción / Ficción con subcategorías
 public/
   pocket_libros_logo.svg      ← logo principal (Georgia 24pt, "e" en isotipo)
   pocket_libros_isotipo.svg   ← solo isotipo (favicon, avatar, con "e" en pág. dorada)
@@ -145,17 +146,28 @@ En mobile: tabs como scroll horizontal.
 - **Paso 2:** selector de 5 clásicos de bienvenida + botón "Obtener mi ebook gratis"
 - **5 clásicos disponibles:** Hamlet (Shakespeare), Don Quijote (Cervantes), 1984 (Orwell), La Metamorfosis (Kafka), La Divina Comedia (Dante)
 - El campo `clasico` se envía como `"Título — Autor"` (con " — ") al API
-- **API route:** `app/api/register/route.ts` — usa Resend; si KV configurado, bloquea emails duplicados
-- **Deduplicación:** Vercel KV (`kv.set(key, ts, { nx: true })`); fail-open si KV no configurado
+- **Error duplicado:** muestra mensaje + botón "← Intentar con otro correo" que resetea al paso 1
+- **API route:** `app/api/register/route.ts` — Supabase (dedup) + Resend (emails)
 
-### Para activar deduplicación de emails (Vercel KV):
-1. Vercel dashboard → Storage → Create KV store → conectar al proyecto
-2. Las env vars `KV_REST_API_URL` y `KV_REST_API_TOKEN` se agregan automáticamente
+### Backend de registro (route.ts)
+- **Supabase:** tabla `registros` (email unique, clasico_elegido, fecha_registro)
+- **Deduplicación:** INSERT con constraint unique → error 23505 → 409 "Ya tienes tu ebook gratuito registrado."
+- **Emails vía Resend:** bienvenida al usuario + notificación a hola@pocketlibros.cl
+- **Email usuario incluye:** hint "¿No encuentras tu ebook? Revisa las carpetas Promociones o Notificaciones"
+- **Env vars requeridas:** `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `RESEND_API_KEY`
+- **Fail-open:** si Supabase no está configurado, el registro procede sin deduplicación
+
+### Open Graph (layout.tsx + opengraph-image.tsx)
+- **og:title:** "Pocket Libros"
+- **og:description:** "Conocimiento accionable. Sin relleno aceptable. Ebooks en PDF de no ficción, clásicos y grandes pensadores desde USD $3."
+- **og:url:** https://pocketlibros.cl
+- **og:image:** `/opengraph-image` → PNG 1200×630 generado con `next/og`
+- **Imagen OG:** fondo navy, logo_neg.svg arriba izquierda, headline en blanco/dorado, marca de agua "PL" sutil
+- **Twitter card:** summary_large_image
 
 ### Portadas en el catálogo
 ```css
 transform: rotate(-3deg);
-box-shadow: 8px 8px 24px rgba(0,0,0,0.4);
 transition: transform 0.3s ease;
 ```
 Hover: `rotate(0deg)` — la portada se endereza.
@@ -173,6 +185,12 @@ Hover: `rotate(0deg)` — la portada se endereza.
 - **hola@pocketlibros.cl** — operativo vía Cloudflare Email Routing → reenvío a Gmail
 - **noreply@longvivia.cl** — dirección FROM en Resend (dominio verificado), display name "Pocket Libros"
 - **reply-to:** hola@pocketlibros.cl
+---
+## Supabase
+- **Tabla:** `registros` — email (unique), clasico_elegido, fecha_registro
+- **RLS:** habilitado con políticas de INSERT y SELECT para rol anon
+- **Grants:** `GRANT USAGE ON SCHEMA public TO anon` + `GRANT INSERT ON public.registros TO anon`
+- **Env vars:** `SUPABASE_URL` y `SUPABASE_ANON_KEY` en .env.local y Vercel
 ---
 ## Documentos institucionales
 Ubicación: archivos `.docx` en el proyecto (no en el repo — son materiales de referencia)
@@ -193,6 +211,10 @@ Ubicación: archivos `.docx` en el proyecto (no en el repo — son materiales de
 - **Disclaimer salud:** "Consulta a tu médico antes de iniciar cualquier protocolo."
 - **Relatos +18:** etiqueta +18, todos los personajes mayores de edad
 ---
+## Notas de dev local
+- `npm run dev` usa `cross-env NODE_TLS_REJECT_UNAUTHORIZED=0` para evitar error TLS con Supabase en Windows Enterprise
+- Esta variable **no aplica en Vercel** (producción funciona sin ella)
+---
 ## Flujo de trabajo — reglas generales
 1. **No hacer push al repo** sin confirmación explícita del usuario
 2. **Confirmar visualmente en localhost:3000** antes de avanzar a la siguiente tarea
@@ -204,7 +226,8 @@ Ubicación: archivos `.docx` en el proyecto (no en el repo — son materiales de
 - [x] Verificar propagación DNS pocketlibros.cl ✅
 - [x] Crear correo de contacto sobre el dominio (hola@pocketlibros.cl vía Cloudflare) ✅
 - [x] Email backend funcional con Resend ✅
-- [ ] Configurar Vercel KV para deduplicación de emails
+- [x] Deduplicación de emails con Supabase ✅
+- [x] Open Graph metadata + imagen OG 1200×630 ✅
 - [ ] Configurar cuenta Gumroad
 - [ ] Subir primeros 3-4 títulos a Gumroad
 - [ ] Agregar links reales de descarga en `app/api/register/route.ts` (DOWNLOAD_LINKS)
@@ -219,9 +242,10 @@ Ubicación: archivos `.docx` en el proyecto (no en el repo — son materiales de
 - [x] 4 pasos en "Cómo funciona" ✅
 - [x] 4 argumentos en "Por qué Pocket Libros" ✅
 - [x] Ticker actualizado con catálogo completo ✅
-- [x] Subcategoría "Literatura Adulta +18" renombrada a "Relatos +18" ✅
-- [x] Logos SVG actualizados (font-size 24, "e" en isotipo, línea centrada) ✅
+- [x] Subcategoría renombrada a "Relatos +18" ✅
+- [x] Logos SVG actualizados (font-size 24, "e" en isotipo, línea ajustada) ✅
 - [x] Control tamaño fuente A/A+/A++ en Nav con localStorage ✅
+- [x] Reset formulario en error de duplicado ✅
 - [ ] Portadas Novela Negra (10 pendientes)
 - [ ] 4 títulos adicionales Relatos +18 con portadas
 ### Contenido
