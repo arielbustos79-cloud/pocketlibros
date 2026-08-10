@@ -56,7 +56,8 @@ public/
 - **Isotipo:** libro abierto. Página izquierda blanca con líneas onduladas navy, página derecha dorada con "e" itálica navy, lomo navy/dorado según versión, base curva
 - **Nombre:** "Pocket" sobre línea dorada y "Libros" bajo ella, pegados al lado derecho del isotipo
 - **Tipografía:** Georgia serif, **font-size 24**, peso normal, color azul claro `#6B8EC2` (logo) / blanco (logo_neg)
-- **Línea divisoria:** centrada entre "Pocket" y "Libros", stroke gold #B8952A
+- **Línea divisoria:** centrada entre "Pocket" y "Libros", stroke gold #B8952A, ancho ajustado al texto de "Pocket" (72px medido en browser)
+- **Tamaño en nav:** 170×82px desktop / isotipo 40×41px mobile
 - **Sin lema** en el logo — el lema va solo en el ticker y los textos
 ---
 ## Estructura del catálogo
