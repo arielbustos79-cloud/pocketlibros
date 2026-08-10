@@ -118,9 +118,16 @@ export default function EmailForm() {
             ))}
           </select>
           {error && (
-            <p className="px-5 py-2 text-[0.75rem] text-red-300 bg-red-900/20 border-b border-white/10">
-              {error}
-            </p>
+            <div className="px-5 py-3 bg-red-900/20 border-b border-white/10 flex flex-col gap-2">
+              <p className="text-[0.75rem] text-red-300">{error}</p>
+              <button
+                type="button"
+                onClick={reset}
+                className="text-[0.65rem] tracking-[0.12em] uppercase text-white/35 hover:text-white/60 transition-colors duration-200 text-left"
+              >
+                ← Intentar con otro correo
+              </button>
+            </div>
           )}
           <button
             type="submit"

@@ -71,7 +71,8 @@ export async function POST(request: NextRequest) {
             <h1 style="margin:0 0 16px;font-size:28px;font-weight:normal;color:#FFFFFF;line-height:1.25;">Tu ebook gratuito está listo</h1>
             <p style="margin:0 0 24px;font-size:15px;color:rgba(255,255,255,0.65);line-height:1.7;">Elegiste <strong style="color:#FFFFFF;">${clsicoDisplay}</strong>. Aquí tienes tu link de descarga:</p>
             <a href="${downloadLink}" style="display:inline-block;background:#B8952A;color:#0D2B4E;font-family:Georgia,serif;font-size:12px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:14px 32px;">Descargar ebook →</a>
-            <p style="margin:24px 0 0;font-size:13px;color:rgba(255,255,255,0.35);line-height:1.6;">Si el botón no funciona, copia este enlace en tu navegador:<br><a href="${downloadLink}" style="color:#B8952A;">${downloadLink}</a></p>
+            <p style="margin:16px 0 0;font-size:13px;color:rgba(255,255,255,0.45);line-height:1.6;">¿No encuentras tu ebook? Revisa las carpetas <strong style="color:rgba(255,255,255,0.6);">Promociones</strong> o <strong style="color:rgba(255,255,255,0.6);">Notificaciones</strong> de tu correo.</p>
+            <p style="margin:16px 0 0;font-size:13px;color:rgba(255,255,255,0.35);line-height:1.6;">Si el botón no funciona, copia este enlace en tu navegador:<br><a href="${downloadLink}" style="color:#B8952A;">${downloadLink}</a></p>
           </td>
         </tr>
         <tr>
