@@ -26,13 +26,17 @@ app/
   page.tsx          ← página principal (todas las secciones)
   layout.tsx        ← layout raíz
   globals.css       ← tokens de color
+  api/
+    register/
+      route.ts      ← API de registro: Resend + deduplicación Vercel KV
   _components/
-    Nav.tsx         ← navegación con hamburger
+    Nav.tsx         ← navegación con hamburger + control tamaño fuente A/A+/A++
     EmailForm.tsx   ← formulario hero (dos pasos)
+    CatalogTabs.tsx ← tabs No Ficción / Ficción con subcategorías
 public/
-  pocket_libros_logo.svg      ← logo principal (fuente SVG)
-  pocket_libros_isotipo.svg   ← solo isotipo (favicon, avatar)
-  pocket_libros_logo_neg.svg  ← versión negativa (sobre navy)
+  pocket_libros_logo.svg      ← logo principal (Georgia 24pt, "e" en isotipo)
+  pocket_libros_isotipo.svg   ← solo isotipo (favicon, avatar, con "e" en pág. dorada)
+  pocket_libros_logo_neg.svg  ← versión negativa (sobre navy, texto blanco)
   portadas/                   ← portadas SVG de todos los títulos
 ```
 ---
@@ -48,10 +52,11 @@ public/
 --gray5:     #F2F2F0   /* fondos suaves */
 ```
 ---
-## Logo
-- **Isotipo:** libro abierto. Página izquierda blanca con líneas onduladas navy, página derecha dorada, lomo navy, base curva navy
+## Logo (estado actual)
+- **Isotipo:** libro abierto. Página izquierda blanca con líneas onduladas navy, página derecha dorada con "e" itálica navy, lomo navy/dorado según versión, base curva
 - **Nombre:** "Pocket" sobre línea dorada y "Libros" bajo ella, pegados al lado derecho del isotipo
-- **Tipografía:** Georgia serif, peso normal, color azul claro `#6B8EC2`
+- **Tipografía:** Georgia serif, **font-size 24**, peso normal, color azul claro `#6B8EC2` (logo) / blanco (logo_neg)
+- **Línea divisoria:** centrada entre "Pocket" y "Libros", stroke gold #B8952A
 - **Sin lema** en el logo — el lema va solo en el ticker y los textos
 ---
 ## Estructura del catálogo
@@ -60,7 +65,7 @@ public/
 |---|---|
 | No ficción (trading, liderazgo, salud, operaciones) | USD $5 |
 | Clásicos universales, Grandes pensadores, Novela negra | USD $3 |
-| Literatura erótica | USD $7 |
+| Relatos +18 | USD $7 |
 ### Catálogo actual — No Ficción (8 títulos — USD $5)
 | Archivo portada | Título | Subcategoría |
 |---|---|---|
@@ -98,32 +103,26 @@ public/
 | `portada_schopenhauer.svg` | El Mundo como Voluntad y Representación | Schopenhauer |
 | `portada_hume.svg` | Tratado de la Naturaleza Humana | Hume |
 | `portada_spinoza.svg` | Ética | Spinoza |
+### Catálogo actual — Relatos +18 (1 título — USD $7)
+| Archivo portada | Título |
+|---|---|
+| `portada_marcia.svg` | A los pies de Marcia |
 ### Catálogo pendiente de producción
 - **Novela Negra:** 10 títulos — USD $3 (dominio público: Conan Doyle, Agatha Christie, etc.)
-- **Literatura Erótica:** 1 título producido ("A los pies de Marcia") + 4 pendientes — USD $7
+- **Relatos +18:** 4 títulos adicionales — USD $7
 ---
 ## Estructura del landing (app/page.tsx)
 ### Secciones en orden
-1. **Nav** — logo SVG + hamburger mobile
+1. **Nav** — logo SVG + hamburger mobile + control tamaño fuente A/A+/A++
 2. **Hero** — fondo navy, headline con lema, formulario dos pasos
 3. **Ticker/marquee** — banda navy, texto dorado en loop
-4. **Cómo funciona** — 3 pasos: Elige → Descarga → Aplica
+4. **Cómo funciona** — 4 pasos: Elige → Descarga → Aplica → Disfruta
 5. **Catálogo** — organizado por tabs y subcategorías
-6. **Por qué Pocket** — 3 argumentos de valor
-7. **Footer** — © 2026 Pocketlibros.cl — LongViva SpA
-### Ticker/marquee — specs
-```css
-background: #0D2B4E;
-color: #B8952A;
-font-family: Georgia, serif;
-font-size: 15px;
-letter-spacing: 0.12em;
-height: 44px;
-animation: marquee linear infinite; /* sin pausa */
+6. **Por qué Pocket Libros** — 4 argumentos de valor
+7. **Footer** — logo_neg.svg + links + © 2026 Pocketlibros.cl — LongViva SpA
+### Ticker/marquee — texto actual
 ```
-Texto en loop:
-```
-Conocimiento accionable. Sin relleno aceptable.  ·  Conocimiento accionable. Sin relleno aceptable.  ·
+Conocimiento accionable. Sin relleno aceptable.  ·  Pocket Libros  ·  No Ficción · Clásicos · Grandes Pensadores · Relatos +18  ·  Tu primera descarga es gratis  ·
 ```
 ### Catálogo — organización por tabs
 ```
@@ -136,15 +135,22 @@ No Ficción:
 Ficción:
   → Clásicos Universales   (USD $3)
   → Grandes Pensadores     (USD $3)
-  → Novela Negra           (USD $3)
-  → Literatura Adulta +18  (USD $7)
+  → Novela Negra           (USD $3)  ← sin títulos aún, no renderiza
+  → Relatos +18            (USD $7)
 ```
 En mobile: tabs como scroll horizontal.
 ### Formulario de dos pasos (EmailForm.tsx)
 - **Paso 1:** campo email + botón "Continuar"
-- **Paso 2:** selector de clásico de bienvenida + botón "Obtener mi ebook gratis"
-- Los 10 clásicos disponibles como ebook gratuito de bienvenida
-- Transición suave entre pasos
+- **Paso 2:** selector de 5 clásicos de bienvenida + botón "Obtener mi ebook gratis"
+- **5 clásicos disponibles:** Hamlet (Shakespeare), Don Quijote (Cervantes), 1984 (Orwell), La Metamorfosis (Kafka), La Divina Comedia (Dante)
+- El campo `clasico` se envía como `"Título — Autor"` (con " — ") al API
+- **API route:** `app/api/register/route.ts` — usa Resend; si KV configurado, bloquea emails duplicados
+- **Deduplicación:** Vercel KV (`kv.set(key, ts, { nx: true })`); fail-open si KV no configurado
+
+### Para activar deduplicación de emails (Vercel KV):
+1. Vercel dashboard → Storage → Create KV store → conectar al proyecto
+2. Las env vars `KV_REST_API_URL` y `KV_REST_API_TOKEN` se agregan automáticamente
+
 ### Portadas en el catálogo
 ```css
 transform: rotate(-3deg);
@@ -162,6 +168,11 @@ Hover: `rotate(0deg)` — la portada se endereza.
 - **Sello:** "POCKET LIBROS" abajo en dorado pequeño, letra espaciada
 - **Formato:** SVG 600×900px en `public/portadas/`
 ---
+## Email operativo
+- **hola@pocketlibros.cl** — operativo vía Cloudflare Email Routing → reenvío a Gmail
+- **noreply@longvivia.cl** — dirección FROM en Resend (dominio verificado), display name "Pocket Libros"
+- **reply-to:** hola@pocketlibros.cl
+---
 ## Documentos institucionales
 Ubicación: archivos `.docx` en el proyecto (no en el repo — son materiales de referencia)
 | Documento | Estado |
@@ -170,7 +181,6 @@ Ubicación: archivos `.docx` en el proyecto (no en el repo — son materiales de
 | Política de Privacidad | ✅ Producido — falta correo contacto |
 | Quiénes Somos v2 | ✅ Producido |
 | Marco Legal IA | ✅ Producido |
-**Correo de contacto:** pendiente crear sobre pocketlibros.cl — no usar placeholder hasta tener la cuenta real.
 ---
 ## Reglas de producción de ebooks
 - **Marca:** POCKET LIBROS (no POCKET-EBOOKS, no Pocket-Libros)
@@ -180,7 +190,7 @@ Ubicación: archivos `.docx` en el proyecto (no en el repo — son materiales de
 - **Estándar de páginas:** 25 páginas en Word (Georgia 11.5pt, A4, justificado, sin interlineado)
 - **Disclaimer trading:** "Este contenido es exclusivamente educativo. No constituye asesoría financiera."
 - **Disclaimer salud:** "Consulta a tu médico antes de iniciar cualquier protocolo."
-- **Literatura erótica:** etiqueta +18, todos los personajes mayores de edad
+- **Relatos +18:** etiqueta +18, todos los personajes mayores de edad
 ---
 ## Flujo de trabajo — reglas generales
 1. **No hacer push al repo** sin confirmación explícita del usuario
@@ -190,23 +200,34 @@ Ubicación: archivos `.docx` en el proyecto (no en el repo — son materiales de
 ---
 ## Pendientes activos
 ### Infraestructura
-- [ ] Verificar propagación DNS pocketlibros.cl
-- [ ] Crear correo de contacto sobre el dominio
+- [x] Verificar propagación DNS pocketlibros.cl ✅
+- [x] Crear correo de contacto sobre el dominio (hola@pocketlibros.cl vía Cloudflare) ✅
+- [x] Email backend funcional con Resend ✅
+- [ ] Configurar Vercel KV para deduplicación de emails
 - [ ] Configurar cuenta Gumroad
 - [ ] Subir primeros 3-4 títulos a Gumroad
+- [ ] Agregar links reales de descarga en `app/api/register/route.ts` (DOWNLOAD_LINKS)
 ### Landing
 - [x] Integrar logo SVG en Nav ✅
 - [x] Implementar ticker/marquee ✅
 - [x] Formulario de dos pasos funcional ✅
 - [x] Portadas No Ficción y Clásicos en catálogo ✅
-- [ ] Reorganizar catálogo por tabs y subcategorías
-- [ ] Portadas Grandes Pensadores (10 pendientes)
+- [x] Catálogo organizado por tabs y subcategorías ✅
+- [x] Portadas Grandes Pensadores (10 títulos) ✅
+- [x] Footer navy con logo_neg.svg + mailto:hola@pocketlibros.cl ✅
+- [x] 4 pasos en "Cómo funciona" ✅
+- [x] 4 argumentos en "Por qué Pocket Libros" ✅
+- [x] Ticker actualizado con catálogo completo ✅
+- [x] Subcategoría "Literatura Adulta +18" renombrada a "Relatos +18" ✅
+- [x] Logos SVG actualizados (font-size 24, "e" en isotipo, línea centrada) ✅
+- [x] Control tamaño fuente A/A+/A++ en Nav con localStorage ✅
 - [ ] Portadas Novela Negra (10 pendientes)
-- [ ] 4 títulos adicionales Literatura Erótica
+- [ ] 4 títulos adicionales Relatos +18 con portadas
 ### Contenido
 - [ ] Expandir 10 clásicos a 25 páginas Word
 - [ ] Producir 10 títulos Novela Negra
-- [ ] Producir 4 títulos adicionales Literatura Erótica
+- [ ] Producir 4 títulos adicionales Relatos +18
 - [ ] Corregir "A los pies de Marcia" — marca y año
+- [ ] Agregar páginas /terminos y /privacidad con los docs institucionales
 ---
-*Pocket Libros · LongViva SpA · pocketlibros.cl · Actualizado agosto 2026*
+*Pocket Libros · LongViva SpA · pocketlibros.cl · Actualizado 10 agosto 2026*

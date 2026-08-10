@@ -22,7 +22,7 @@ const FICCION_SUBCATS = [
   "Clásicos Universales",
   "Grandes Pensadores",
   "Novela Negra",
-  "Literatura Adulta +18",
+  "Relatos +18",
 ] as const;
 
 export default function CatalogTabs({ books }: { books: Book[] }) {
@@ -75,7 +75,7 @@ export default function CatalogTabs({ books }: { books: Book[] }) {
         {subcats.map((subcat) => {
           const subcatBooks = tabBooks.filter((b) => b.subcategory === subcat);
           if (!subcatBooks.length) return null;
-          const isAdult = subcat === "Literatura Adulta +18";
+          const isAdult = subcat === "Relatos +18";
           return (
             <div key={subcat}>
               <div className="flex items-center gap-3 mb-6">

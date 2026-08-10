@@ -37,15 +37,15 @@ const books: Book[] = [
   { title: "El Mundo como Voluntad", author: "Schopenhauer", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_schopenhauer.svg" },
   { title: "Tratado de la Naturaleza Humana", author: "Hume", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_hume.svg" },
   { title: "Ética", author: "Spinoza", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_spinoza.svg" },
-  // Ficción — Literatura Adulta +18 — USD $7
-  { title: "A los pies de Marcia", subcategory: "Literatura Adulta +18", tab: "ficcion", price: 7, portada: "portada_marcia.svg" },
+  // Ficción — Relatos +18 — USD $7
+  { title: "A los pies de Marcia", subcategory: "Relatos +18", tab: "ficcion", price: 7, portada: "portada_marcia.svg" },
 ];
 
 const steps = [
   {
     num: "01",
     title: "Elige",
-    desc: "Selecciona el tema que necesitas dominar hoy. Cada libro resuelve un problema específico, sin divagaciones.",
+    desc: "Explora categorías: No Ficción, Clásicos, Grandes Pensadores y Relatos +18. Selecciona el ebook de tu preferencia.",
   },
   {
     num: "02",
@@ -55,22 +55,31 @@ const steps = [
   {
     num: "03",
     title: "Aplica",
-    desc: "Cada libro termina con acciones concretas. No teoría — pasos que ejecutas de inmediato.",
+    desc: "En los ebooks de no ficción encontrarás acciones concretas para implementar de inmediato.",
+  },
+  {
+    num: "04",
+    title: "Disfruta",
+    desc: "Lee en cualquier dispositivo, a tu ritmo y con el presupuesto que tengas.",
   },
 ];
 
 const reasons = [
   {
-    title: "Corto por diseño",
-    desc: "Cada libro cubre un solo tema con profundidad suficiente para actuar, sin capítulos de relleno que nunca terminas.",
+    title: "Diseño funcional",
+    desc: "Cada ebook aborda un tema en profundidad, sin capítulos de relleno que nunca terminas.",
   },
   {
-    title: "100% accionable",
-    desc: "Cada título termina con un bloque de acciones concretas. No basta con entender — tienes que poder ejecutar.",
+    title: "Acceso pocket a clásicos",
+    desc: "Literatura universal y grandes pensadores, en formato ágil para leer y comprender con facilidad.",
+  },
+  {
+    title: "Relatos para adultos",
+    desc: "Tratamiento sugerente y sutil para alentar la imaginación, con personajes y situaciones adultas.",
   },
   {
     title: "Precio justo",
-    desc: "Desde USD $3 por título. Sin suscripción. Sin biblioteca que nunca lees. Pagas solo lo que vas a usar.",
+    desc: "Desde USD $3 por título. Sin suscripción. Pagas solo lo que vas a leer.",
   },
 ];
 
@@ -147,12 +156,12 @@ export default function Home() {
           className="overflow-hidden bg-navy border-y border-white/10 h-11 flex items-center"
         >
           <div className="ticker-track">
-            {Array.from({ length: 8 }).map((_, i) => (
+            {Array.from({ length: 6 }).map((_, i) => (
               <span
                 key={i}
                 className="font-serif text-gold text-[15px] tracking-[0.12em] whitespace-nowrap px-10"
               >
-                Conocimiento accionable. Sin relleno aceptable.&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;
+                Conocimiento accionable. Sin relleno aceptable.&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;Pocket Libros&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;No Ficción · Clásicos · Grandes Pensadores · Relatos +18&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;Tu primera descarga es gratis&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;
               </span>
             ))}
           </div>
@@ -167,7 +176,7 @@ export default function Home() {
             <h2 className="font-serif font-normal text-[clamp(1.5rem,3vw,2rem)] text-navy mb-14 text-balance">
               Cómo funciona
             </h2>
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
               {steps.map(({ num, title, desc }) => (
                 <div key={num}>
                   <p
@@ -201,12 +210,12 @@ export default function Home() {
         <section id="nosotros" className="bg-surface">
           <div className="max-w-[960px] mx-auto px-6 md:px-10 py-14 md:py-[5.5rem]">
             <p className="text-[0.68rem] tracking-[0.2em] uppercase text-gold mb-2">
-              Por qué Pocket
+              Por qué Pocket Libros
             </p>
             <h2 className="font-serif font-normal text-[clamp(1.5rem,3vw,2rem)] text-navy mb-14 text-balance">
-              Lo que nos diferencia
+              Lo que somos y nos diferencia
             </h2>
-            <div className="grid md:grid-cols-3 gap-8 md:gap-14">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
               {reasons.map(({ title, desc }) => (
                 <div key={title}>
                   <h3 className="font-serif font-normal text-[1rem] text-navy pb-2 mb-2 border-b border-border">
@@ -223,27 +232,46 @@ export default function Home() {
       {/* ── FOOTER ── */}
       <footer
         id="contacto"
-        className="border-t border-border px-6 md:px-10 py-10 flex flex-col items-center gap-4 text-center"
+        className="bg-navy px-6 md:px-10 py-12 flex flex-col items-center gap-5 text-center"
       >
-        <span className="font-serif text-[0.88rem] tracking-[0.22em] uppercase text-navy">
-          Pocketlibros
-        </span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/pocket_libros_logo_neg.svg"
+          alt="Pocket Libros"
+          width={152}
+          height={73}
+          className="opacity-90"
+        />
         <ul className="flex flex-wrap gap-6 justify-center" role="list">
-          {["Términos", "Privacidad", "Contacto"].map((link) => (
-            <li key={link}>
-              <a
-                href="#"
-                className="text-[0.76rem] text-[#999] hover:text-gold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-sm"
-              >
-                {link}
-              </a>
-            </li>
-          ))}
+          <li>
+            <a
+              href="#"
+              className="text-[0.76rem] text-white/35 hover:text-gold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-sm"
+            >
+              Términos
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              className="text-[0.76rem] text-white/35 hover:text-gold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-sm"
+            >
+              Privacidad
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:hola@pocketlibros.cl"
+              className="text-[0.76rem] text-white/35 hover:text-gold transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-sm"
+            >
+              Contacto
+            </a>
+          </li>
         </ul>
-        <p className="text-[0.74rem] text-[#bbb] max-w-[520px] leading-[1.5]">
+        <p className="text-[0.74rem] text-white/20 max-w-[520px] leading-[1.5]">
           Contenido educativo. No constituye asesoría financiera ni profesional.
         </p>
-        <p className="text-[0.73rem] text-[#ccc]">© 2026 Pocketlibros.cl</p>
+        <p className="text-[0.73rem] text-white/15">© 2026 Pocketlibros.cl — LongViva SpA</p>
       </footer>
     </>
   );

@@ -4,16 +4,11 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const DOWNLOAD_LINKS: Record<string, string> = {
-  "Don Quijote de la Mancha": "#",
-  "Hamlet": "#",
-  "La Metamorfosis": "#",
-  "La Odisea": "#",
-  "1984": "#",
-  "Crimen y Castigo": "#",
-  "Orgullo y Prejuicio": "#",
-  "La Guerra y la Paz": "#",
-  "Moby Dick": "#",
-  "La Divina Comedia": "#",
+  "Hamlet — Shakespeare": "#",
+  "Don Quijote de la Mancha — Cervantes": "#",
+  "1984 — Orwell": "#",
+  "La Metamorfosis — Kafka": "#",
+  "La Divina Comedia — Dante": "#",
 };
 
 export async function POST(request: NextRequest) {
@@ -24,7 +19,21 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Faltan campos requeridos." }, { status: 400 });
     }
 
+    /* Duplicate email check via Vercel KV (fail-open if KV not configured) */
+    if (process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN) {
+      const { kv } = await import("@vercel/kv");
+      const key = `reg:${email.toLowerCase().trim()}`;
+      const wasNew = await kv.set(key, Date.now(), { nx: true });
+      if (wasNew === null) {
+        return NextResponse.json(
+          { error: "Este correo ya recibió su ebook de bienvenida." },
+          { status: 409 }
+        );
+      }
+    }
+
     const downloadLink = DOWNLOAD_LINKS[clasico] ?? "#";
+    const clsicoDisplay = clasico.split(" — ")[0];
 
     const welcomeHtml = `
 <!DOCTYPE html>
@@ -43,7 +52,7 @@ export async function POST(request: NextRequest) {
         <tr>
           <td style="padding:0 40px 32px;">
             <h1 style="margin:0 0 16px;font-size:28px;font-weight:normal;color:#FFFFFF;line-height:1.25;">Tu ebook gratuito está listo</h1>
-            <p style="margin:0 0 24px;font-size:15px;color:rgba(255,255,255,0.65);line-height:1.7;">Elegiste <strong style="color:#FFFFFF;">${clasico}</strong>. Aquí tienes tu link de descarga:</p>
+            <p style="margin:0 0 24px;font-size:15px;color:rgba(255,255,255,0.65);line-height:1.7;">Elegiste <strong style="color:#FFFFFF;">${clsicoDisplay}</strong>. Aquí tienes tu link de descarga:</p>
             <a href="${downloadLink}" style="display:inline-block;background:#B8952A;color:#0D2B4E;font-family:Georgia,serif;font-size:12px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;text-decoration:none;padding:14px 32px;">Descargar ebook →</a>
             <p style="margin:24px 0 0;font-size:13px;color:rgba(255,255,255,0.35);line-height:1.6;">Si el botón no funciona, copia este enlace en tu navegador:<br><a href="${downloadLink}" style="color:#B8952A;">${downloadLink}</a></p>
           </td>
@@ -70,14 +79,14 @@ export async function POST(request: NextRequest) {
         from: "Pocket Libros <noreply@longvivia.cl>",
         replyTo: "hola@pocketlibros.cl",
         to: email,
-        subject: `Tu ebook gratuito: ${clasico} — Pocket Libros`,
+        subject: `Tu ebook gratuito: ${clsicoDisplay} — Pocket Libros`,
         html: welcomeHtml,
       }),
       resend.emails.send({
         from: "Pocket Libros <noreply@longvivia.cl>",
         replyTo: "hola@pocketlibros.cl",
         to: "hola@pocketlibros.cl",
-        subject: `Nuevo registro: ${email} eligió ${clasico}`,
+        subject: `Nuevo registro: ${email} eligió ${clsicoDisplay}`,
         html: notifyHtml,
       }),
     ]);

@@ -32,6 +32,9 @@
   <path d="M37,10 L67,14 L67,65 L37,61 Z" fill="url(#gp2)"/>
   <path d="M37,10 L50,11.5 L50,61 L37,61 Z" fill="url(#gs2)"/>
 
+  <!-- "e" on gold page -->
+  <text x="53" y="43" font-family="Georgia,'Times New Roman',serif" font-size="17" font-style="italic" fill="#0D2B4E" text-anchor="middle" opacity="0.65">e</text>
+
   <!-- Spine (gold so visible on dark backgrounds) -->
   <rect x="32" y="9" width="6" height="53" rx="1.5" fill="#B8952A"/>
 

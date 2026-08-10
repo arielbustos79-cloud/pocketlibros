@@ -3,16 +3,11 @@
 import { useState } from "react";
 
 const CLASICOS = [
-  "Don Quijote de la Mancha",
-  "Hamlet",
-  "La Metamorfosis",
-  "La Odisea",
-  "1984",
-  "Crimen y Castigo",
-  "Orgullo y Prejuicio",
-  "La Guerra y la Paz",
-  "Moby Dick",
-  "La Divina Comedia",
+  "Hamlet — Shakespeare",
+  "Don Quijote de la Mancha — Cervantes",
+  "1984 — Orwell",
+  "La Metamorfosis — Kafka",
+  "La Divina Comedia — Dante",
 ];
 
 export default function EmailForm() {
@@ -39,8 +34,8 @@ export default function EmailForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, clasico: selected }),
       });
+      const data = await res.json();
       if (!res.ok) {
-        const data = await res.json();
         setError(data.error ?? "Error al enviar. Inténtalo de nuevo.");
       } else {
         setSubmitted(true);
@@ -52,17 +47,19 @@ export default function EmailForm() {
     }
   };
 
+  const reset = () => { setSubmitted(false); setStep(1); setEmail(""); setSelected(""); setError(""); };
+
   if (submitted) {
     return (
       <div className="py-8 text-center" role="status" aria-live="polite">
         <p className="font-serif text-white text-lg mb-2">¡Listo!</p>
         <p className="text-white/60 text-sm leading-relaxed mb-5">
           Revisa tu correo — te enviamos el link de descarga de{" "}
-          <span className="text-gold">{selected}</span>.
+          <span className="text-gold">{selected.split(" — ")[0]}</span>.
         </p>
         <button
           type="button"
-          onClick={() => { setSubmitted(false); setStep(1); setEmail(""); setSelected(""); setError(""); }}
+          onClick={reset}
           className="text-[0.65rem] tracking-[0.12em] uppercase text-white/25 hover:text-white/50 transition-colors duration-200"
         >
           ← Registrar otro correo
@@ -73,7 +70,6 @@ export default function EmailForm() {
 
   return (
     <div className="border border-white/25 flex flex-col">
-      {/* Step indicator */}
       <div className="flex border-b border-white/15">
         {(["01 Correo", "02 Tu clásico"] as const).map((label, i) => (
           <div
@@ -89,9 +85,7 @@ export default function EmailForm() {
 
       {step === 1 ? (
         <form onSubmit={handleStep1} className="flex flex-col">
-          <label htmlFor="email-hero" className="sr-only">
-            Tu correo electrónico
-          </label>
+          <label htmlFor="email-hero" className="sr-only">Tu correo electrónico</label>
           <input
             id="email-hero"
             type="email"
@@ -110,9 +104,7 @@ export default function EmailForm() {
         </form>
       ) : (
         <form onSubmit={handleStep2} className="flex flex-col">
-          <label htmlFor="clasico-select" className="sr-only">
-            Elige tu clásico de bienvenida
-          </label>
+          <label htmlFor="clasico-select" className="sr-only">Elige tu clásico de bienvenida</label>
           <select
             id="clasico-select"
             required
@@ -120,13 +112,9 @@ export default function EmailForm() {
             onChange={(e) => setSelected(e.target.value)}
             className="px-5 py-5 bg-white/[0.06] border-b border-white/15 text-white text-base outline-none focus:bg-white/[0.09] transition-colors duration-200 appearance-none cursor-pointer"
           >
-            <option value="" disabled style={{ background: "#0D2B4E" }}>
-              Selecciona un título…
-            </option>
+            <option value="" disabled style={{ background: "#0D2B4E" }}>Selecciona un título…</option>
             {CLASICOS.map((c) => (
-              <option key={c} value={c} style={{ background: "#0D2B4E", color: "#fff" }}>
-                {c}
-              </option>
+              <option key={c} value={c} style={{ background: "#0D2B4E", color: "#fff" }}>{c}</option>
             ))}
           </select>
           {error && (
