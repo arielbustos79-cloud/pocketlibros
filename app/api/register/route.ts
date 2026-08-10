@@ -67,13 +67,15 @@ export async function POST(request: NextRequest) {
 
     const [userEmail, adminEmail] = await Promise.all([
       resend.emails.send({
-        from: "Pocket Libros <hola@pocketlibros.cl>",
+        from: "Pocket Libros <noreply@longvivia.cl>",
+        replyTo: "hola@pocketlibros.cl",
         to: email,
         subject: `Tu ebook gratuito: ${clasico} — Pocket Libros`,
         html: welcomeHtml,
       }),
       resend.emails.send({
-        from: "Pocket Libros <hola@pocketlibros.cl>",
+        from: "Pocket Libros <noreply@longvivia.cl>",
+        replyTo: "hola@pocketlibros.cl",
         to: "hola@pocketlibros.cl",
         subject: `Nuevo registro: ${email} eligió ${clasico}`,
         html: notifyHtml,
