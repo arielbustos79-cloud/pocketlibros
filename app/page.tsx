@@ -122,7 +122,7 @@ export default function Home() {
                 <em className="not-italic text-gold">Sin relleno aceptable.</em>
               </h1>
               <p className="text-white/60 text-base leading-[1.7] max-w-[460px] mb-10">
-                No ficción accionable y grandes clásicos de la literatura. Lee en una tarde, aplica esa misma noche.
+                Elige guías de no ficción accionable, grandes clásicos de la literatura universal o relatos de ficción adulta. Formato pocket para leer a tu ritmo, en cualquier dispositivo.
               </p>
               <a
                 href="#catalogo"
