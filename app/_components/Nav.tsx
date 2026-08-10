@@ -28,7 +28,7 @@ export default function Nav() {
     >
       {/* Logo */}
       <a
-        href="#"
+        href="/"
         aria-label="Pocket Libros — Inicio"
         className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-sm"
       >
