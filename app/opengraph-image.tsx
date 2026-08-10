@@ -1,9 +1,14 @@
 import { ImageResponse } from "next/og";
+import { readFileSync } from "fs";
+import { join } from "path";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default function OGImage() {
+  const logoSvg = readFileSync(join(process.cwd(), "public/pocket_libros_logo_neg.svg"));
+  const logoSrc = `data:image/svg+xml;base64,${logoSvg.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -14,7 +19,7 @@ export default function OGImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          padding: "80px 90px",
+          padding: "72px 90px",
           position: "relative",
         }}
       >
@@ -31,13 +36,15 @@ export default function OGImage() {
           }}
         />
 
-        {/* Label row */}
-        <div style={{ display: "flex", alignItems: "center", gap: "16px", marginBottom: "36px" }}>
-          <div style={{ display: "flex", width: "40px", height: "2px", background: "#B8952A" }} />
-          <div style={{ display: "flex", fontFamily: "serif", fontSize: "15px", letterSpacing: "0.22em", color: "#B8952A" }}>
-            EBOOKS CORTOS EN ESPAÑOL
-          </div>
-        </div>
+        {/* Logo — upper left */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={logoSrc}
+          width={230}
+          height={111}
+          style={{ marginBottom: "40px", objectFit: "contain" }}
+          alt="Pocket Libros"
+        />
 
         {/* Headline */}
         <div style={{ display: "flex", fontFamily: "serif", fontSize: "80px", fontWeight: 400, color: "#FFFFFF", lineHeight: 1.05 }}>
