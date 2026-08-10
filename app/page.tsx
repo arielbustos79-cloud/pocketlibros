@@ -100,7 +100,7 @@ export default function Home() {
             PL
           </span>
 
-          <div className="relative z-10 max-w-[1060px] mx-auto w-full grid md:grid-cols-[3fr_3fr] gap-10 md:gap-16 items-center">
+          <div className="relative z-10 max-w-[1060px] mx-auto w-full grid md:grid-cols-[1fr_1.25fr] gap-10 md:gap-14 items-center">
             <div>
               <p className="inline-flex items-center gap-3 text-[0.7rem] tracking-[0.22em] uppercase text-gold mb-8 before:content-[''] before:block before:w-7 before:h-px before:bg-gold">
                 Ebooks cortos en español
@@ -113,7 +113,7 @@ export default function Home() {
                 <em className="not-italic text-gold">Sin relleno aceptable.</em>
               </h1>
               <p className="text-white/60 text-base leading-[1.7] max-w-[460px] mb-10">
-                Guías sobre trading, liderazgo, salud y operaciones. Lee en una tarde, aplica esa misma noche.
+                No ficción accionable y grandes clásicos de la literatura. Lee en una tarde, aplica esa misma noche.
               </p>
               <a
                 href="#catalogo"
@@ -123,11 +123,11 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="border border-white/15 p-8 md:p-12">
-              <span className="block text-[0.68rem] tracking-[0.2em] uppercase text-gold mb-2">
+            <div className="border border-gold/35 p-8 md:p-12 bg-white/[0.04]">
+              <span className="block text-[0.68rem] tracking-[0.2em] uppercase text-gold mb-3">
                 Primer ebook gratis
               </span>
-              <p className="font-serif font-normal text-white text-[1.05rem] mb-1">
+              <p className="font-serif font-normal text-white text-[1.3rem] mb-1">
                 Descarga sin costo
               </p>
               <p className="text-white/45 text-[0.82rem] leading-[1.55] mb-7">

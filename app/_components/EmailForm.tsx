@@ -56,10 +56,17 @@ export default function EmailForm() {
     return (
       <div className="py-8 text-center" role="status" aria-live="polite">
         <p className="font-serif text-white text-lg mb-2">¡Listo!</p>
-        <p className="text-white/60 text-sm leading-relaxed">
+        <p className="text-white/60 text-sm leading-relaxed mb-5">
           Revisa tu correo — te enviamos el link de descarga de{" "}
           <span className="text-gold">{selected}</span>.
         </p>
+        <button
+          type="button"
+          onClick={() => { setSubmitted(false); setStep(1); setEmail(""); setSelected(""); setError(""); }}
+          className="text-[0.65rem] tracking-[0.12em] uppercase text-white/25 hover:text-white/50 transition-colors duration-200"
+        >
+          ← Registrar otro correo
+        </button>
       </div>
     );
   }
