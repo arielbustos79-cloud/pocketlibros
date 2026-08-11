@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 const META_TITLE = "Pocket Libros";
@@ -41,6 +42,7 @@ export default function RootLayout({
     <html lang="es">
       <body suppressHydrationWarning className="min-h-full flex flex-col antialiased bg-white text-[#222]">
         {children}
+        <Script src="https://gumroad.com/js/gumroad.js" strategy="afterInteractive" />
       </body>
     </html>
   );

@@ -38,7 +38,7 @@ const books: Book[] = [
   { title: "Tratado de la Naturaleza Humana", author: "Hume", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_hume.svg" },
   { title: "Ética", author: "Spinoza", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_spinoza.svg" },
   // Ficción — Relatos +18 — USD $7
-  { title: "A los pies de Marcia", subcategory: "Relatos +18", tab: "ficcion", price: 7, portada: "portada_marcia.svg" },
+  { title: "A los pies de Marcia", subcategory: "Relatos +18", tab: "ficcion", price: 7, portada: "portada_marcia.svg", buyUrl: "https://pocketlibros.gumroad.com/l/marcia?wanted=true" },
 ];
 
 const steps = [

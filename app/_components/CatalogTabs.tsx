@@ -9,6 +9,7 @@ export type Book = {
   tab: "noficcion" | "ficcion";
   price: number;
   portada: string;
+  buyUrl?: string;
 };
 
 const NO_FICCION_SUBCATS = [
@@ -89,7 +90,7 @@ export default function CatalogTabs({ books }: { books: Book[] }) {
                 )}
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-5">
-                {subcatBooks.map(({ title, author, price, portada }) => (
+                {subcatBooks.map(({ title, author, price, portada, buyUrl }) => (
                   <article
                     key={title}
                     className="flex flex-col border border-border hover:border-gold hover:shadow-[0_8px_32px_rgba(0,0,0,0.18)] transition-all duration-300"
@@ -116,7 +117,8 @@ export default function CatalogTabs({ books }: { books: Book[] }) {
                       <div className="flex justify-between items-center pt-2 border-t border-border mt-1">
                         <span className="text-[0.88rem] font-medium text-[#222]">{`USD $${price}`}</span>
                         <a
-                          href="#"
+                          href={buyUrl ?? "#"}
+                          {...(buyUrl ? { "data-gumroad-overlay-checkout": "true", target: "_blank", rel: "noopener noreferrer" } : {})}
                           className="text-[0.66rem] tracking-[0.1em] uppercase text-navy border border-navy px-2.5 py-1 hover:bg-navy hover:text-white transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                           aria-label={`Obtener ${title}`}
                         >
