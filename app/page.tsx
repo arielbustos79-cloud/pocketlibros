@@ -67,7 +67,7 @@ const steps = [
 const reasons = [
   {
     title: "Diseño funcional",
-    desc: "Cada ebook aborda un tema en profundidad, sin capítulos de relleno que nunca terminas.",
+    desc: "Cada ebook accionable aborda un tema en profundidad, sin capítulos de relleno que nunca terminas.",
   },
   {
     title: "Acceso pocket a clásicos",
