@@ -12,11 +12,11 @@ function getSupabase() {
 }
 
 const DOWNLOAD_LINKS: Record<string, string> = {
-  "Hamlet — Shakespeare": "#",
-  "Don Quijote de la Mancha — Cervantes": "#",
-  "1984 — Orwell": "#",
-  "La Metamorfosis — Kafka": "#",
-  "La Divina Comedia — Dante": "#",
+  "Hamlet — Shakespeare": "https://pocketlibros.gumroad.com/l/hamlet",
+  "Don Quijote de la Mancha — Cervantes": "https://pocketlibros.gumroad.com/l/quijote",
+  "1984 — Orwell": "https://pocketlibros.gumroad.com/l/1984",
+  "La Metamorfosis — Kafka": "https://pocketlibros.gumroad.com/l/metamorfosis",
+  "La Divina Comedia — Dante": "https://pocketlibros.gumroad.com/l/divina-comedia",
 };
 
 export async function POST(request: NextRequest) {
