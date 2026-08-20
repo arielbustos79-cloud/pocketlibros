@@ -4,28 +4,28 @@ import CatalogTabs, { type Book } from "./_components/CatalogTabs";
 
 const books: Book[] = [
   // No ficción — Trading & Finanzas — USD $5
-  { title: "Domina tu Ansiedad al Invertir", subcategory: "Trading & Finanzas", tab: "noficcion", price: 5, portada: "portada_ansiedad.svg" },
-  { title: "Trading para Principiantes", subcategory: "Trading & Finanzas", tab: "noficcion", price: 5, portada: "portada_trading.svg" },
+  { title: "Domina tu Ansiedad al Invertir", subcategory: "Trading & Finanzas", tab: "noficcion", price: 5, portada: "portada_ansiedad.svg", buyUrl: "https://pocketlibros.gumroad.com/l/domina-ansiedad?wanted=true" },
+  { title: "Trading para Principiantes", subcategory: "Trading & Finanzas", tab: "noficcion", price: 5, portada: "portada_trading.svg", buyUrl: "https://pocketlibros.gumroad.com/l/trading-principiantes?wanted=true" },
   // No ficción — Liderazgo — USD $5
-  { title: "Lidera sin Cargo", subcategory: "Liderazgo", tab: "noficcion", price: 5, portada: "portada_liderazgo.svg" },
+  { title: "Lidera sin Cargo", subcategory: "Liderazgo", tab: "noficcion", price: 5, portada: "portada_liderazgo.svg", buyUrl: "https://pocketlibros.gumroad.com/l/lider_sin_cargo?wanted=true" },
   { title: "El Líder que Escucha", subcategory: "Liderazgo", tab: "noficcion", price: 5, portada: "portada_lider_escucha.svg" },
   // No ficción — Salud & Bienestar — USD $5
   { title: "Ayuno Intermitente: Protocolo Simple", subcategory: "Salud & Bienestar", tab: "noficcion", price: 5, portada: "portada_ayuno.svg" },
   { title: "Energía sin Cafeína", subcategory: "Salud & Bienestar", tab: "noficcion", price: 5, portada: "portada_energia.svg" },
   // No ficción — Operaciones — USD $5
-  { title: "Supply Chain en Crisis", subcategory: "Operaciones", tab: "noficcion", price: 5, portada: "portada_supply_chain.svg" },
-  { title: "KPIs que Importan", subcategory: "Operaciones", tab: "noficcion", price: 5, portada: "portada_kpis.svg" },
+  { title: "Supply Chain en Crisis", subcategory: "Operaciones", tab: "noficcion", price: 5, portada: "portada_supply_chain.svg", buyUrl: "https://pocketlibros.gumroad.com/l/supply-chain?wanted=true" },
+  { title: "KPIs que Importan", subcategory: "Operaciones", tab: "noficcion", price: 5, portada: "portada_kpis.svg", buyUrl: "https://pocketlibros.gumroad.com/l/kpis?wanted=true" },
   // Ficción — Clásicos Universales — USD $3
-  { title: "Don Quijote de la Mancha", author: "Cervantes", subcategory: "Clásicos Universales", tab: "ficcion", price: 0, portada: "portada_quijote.svg", buyUrl: "https://pocketlibros.gumroad.com/l/quijote" },
-  { title: "Hamlet", author: "Shakespeare", subcategory: "Clásicos Universales", tab: "ficcion", price: 0, portada: "portada_hamlet.svg", buyUrl: "https://pocketlibros.gumroad.com/l/hamlet" },
-  { title: "La Metamorfosis", author: "Kafka", subcategory: "Clásicos Universales", tab: "ficcion", price: 0, portada: "portada_metamorfosis.svg", buyUrl: "https://pocketlibros.gumroad.com/l/metamorfosis" },
+  { title: "Don Quijote de la Mancha", author: "Cervantes", subcategory: "Clásicos Universales", tab: "ficcion", price: 3, portada: "portada_quijote.svg", buyUrl: "https://pocketlibros.gumroad.com/l/quijote" },
+  { title: "Hamlet", author: "Shakespeare", subcategory: "Clásicos Universales", tab: "ficcion", price: 3, portada: "portada_hamlet.svg", buyUrl: "https://pocketlibros.gumroad.com/l/hamlet" },
+  { title: "La Metamorfosis", author: "Kafka", subcategory: "Clásicos Universales", tab: "ficcion", price: 3, portada: "portada_metamorfosis.svg", buyUrl: "https://pocketlibros.gumroad.com/l/metamorfosis" },
   { title: "La Odisea", author: "Homero", subcategory: "Clásicos Universales", tab: "ficcion", price: 3, portada: "portada_odisea.svg", buyUrl: "https://pocketlibros.gumroad.com/l/odisea?wanted=true" },
-  { title: "1984", author: "Orwell", subcategory: "Clásicos Universales", tab: "ficcion", price: 0, portada: "portada_1984.svg", buyUrl: "https://pocketlibros.gumroad.com/l/1984" },
+  { title: "1984", author: "Orwell", subcategory: "Clásicos Universales", tab: "ficcion", price: 3, portada: "portada_1984.svg", buyUrl: "https://pocketlibros.gumroad.com/l/1984" },
   { title: "Crimen y Castigo", author: "Dostoievski", subcategory: "Clásicos Universales", tab: "ficcion", price: 3, portada: "portada_crimen_castigo.svg", buyUrl: "https://pocketlibros.gumroad.com/l/crimen-castigo?wanted=true" },
   { title: "Orgullo y Prejuicio", author: "Austen", subcategory: "Clásicos Universales", tab: "ficcion", price: 3, portada: "portada_orgullo_prejuicio.svg", buyUrl: "https://pocketlibros.gumroad.com/l/orgullo-prejuicio?wanted=true" },
   { title: "La Guerra y la Paz", author: "Tolstói", subcategory: "Clásicos Universales", tab: "ficcion", price: 3, portada: "portada_guerra_paz.svg", buyUrl: "https://pocketlibros.gumroad.com/l/guerra-paz?wanted=true" },
   { title: "Moby Dick", author: "Melville", subcategory: "Clásicos Universales", tab: "ficcion", price: 3, portada: "portada_moby_dick.svg", buyUrl: "https://pocketlibros.gumroad.com/l/moby-dick?wanted=true" },
-  { title: "La Divina Comedia", author: "Dante", subcategory: "Clásicos Universales", tab: "ficcion", price: 0, portada: "portada_divina_comedia.svg", buyUrl: "https://pocketlibros.gumroad.com/l/divina-comedia" },
+  { title: "La Divina Comedia", author: "Dante", subcategory: "Clásicos Universales", tab: "ficcion", price: 3, portada: "portada_divina_comedia.svg", buyUrl: "https://pocketlibros.gumroad.com/l/divina-comedia" },
   // Ficción — Grandes Pensadores — USD $3
   { title: "La República", author: "Platón", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_republica.svg" },
   { title: "Ética a Nicómaco", author: "Aristóteles", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_etica.svg" },
