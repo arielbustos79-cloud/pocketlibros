@@ -115,14 +115,21 @@ export default function CatalogTabs({ books }: { books: Book[] }) {
                         {title}
                       </p>
                       <div className="flex justify-between items-center pt-2 border-t border-border mt-1">
-                        <span className="text-[0.88rem] font-medium text-[#222]">{`USD $${price}`}</span>
+                        {price === 0 ? (
+                          <svg width="52" height="52" viewBox="0 0 52 52" aria-label="Cortesía" style={{flexShrink:0}}>
+                            <circle cx="26" cy="26" r="24" fill="none" stroke="#B8952A" strokeWidth="1"/>
+                            <text x="26" y="30" fontSize="6.5" fill="#0D2B4E" fontFamily="Georgia,serif" textAnchor="middle" letterSpacing="0.5">Cortesía</text>
+                          </svg>
+                        ) : (
+                          <span className="text-[0.88rem] font-medium text-[#222]">{`USD $${price}`}</span>
+                        )}
                         <a
                           href={buyUrl ?? "#"}
                           {...(buyUrl ? { "data-gumroad-overlay-checkout": "true", target: "_blank", rel: "noopener noreferrer" } : {})}
                           className="text-[0.66rem] tracking-[0.1em] uppercase text-navy border border-navy px-2.5 py-1 hover:bg-navy hover:text-white transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                           aria-label={`Obtener ${title}`}
                         >
-                          Obtener
+                          {price === 0 ? "Descargar" : "Obtener"}
                         </a>
                       </div>
                     </div>
