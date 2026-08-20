@@ -39,6 +39,10 @@ const books: Book[] = [
   { title: "Ética", author: "Spinoza", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_spinoza.svg" },
   // Ficción — Relatos +18 — USD $7
   { title: "A los pies de Marcia", subcategory: "Relatos +18", tab: "ficcion", price: 7, portada: "png/portada_marcia.png", buyUrl: "https://pocketlibros.gumroad.com/l/marcia?wanted=true" },
+  { title: "Las Noches de Graciela", subcategory: "Relatos +18", tab: "ficcion", price: 7, portada: "portada_noches_graciela.svg", buyUrl: "https://pocketlibros.gumroad.com/l/graciela?wanted=true" },
+  { title: "Los Pies de Sofía", subcategory: "Relatos +18", tab: "ficcion", price: 7, portada: "portada_pies_sofia.svg", buyUrl: "https://pocketlibros.gumroad.com/l/pies-sofia?wanted=true" },
+  { title: "La Chica del Vestido Rojo", subcategory: "Relatos +18", tab: "ficcion", price: 7, portada: "portada_vestido_rojo.svg", buyUrl: "https://pocketlibros.gumroad.com/l/vestido-rojo?wanted=true" },
+  { title: "La Llave del 5B", subcategory: "Relatos +18", tab: "ficcion", price: 7, portada: "portada_llave_5b.svg", buyUrl: "https://pocketlibros.gumroad.com/l/llaves-5B?wanted=true" },
 ];
 
 const steps = [

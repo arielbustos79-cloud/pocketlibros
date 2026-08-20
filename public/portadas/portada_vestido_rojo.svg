@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#120408"/>
+      <stop offset="100%" stop-color="#1A0510"/>
+    </linearGradient>
+    <linearGradient id="vestido_grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#921A1A"/>
+      <stop offset="50%" stop-color="#A82020"/>
+      <stop offset="100%" stop-color="#7A1414"/>
+    </linearGradient>
+    <radialGradient id="figura_glow" cx="50%" cy="50%" r="30%">
+      <stop offset="0%" stop-color="#A82020" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#1A0510" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="600" height="900" fill="url(#bg)"/>
+  <rect width="600" height="900" fill="url(#figura_glow)"/>
+
+  <!-- Línea dorada superior -->
+  <rect x="50" y="46" width="500" height="1"   fill="#C4956A" opacity="0.6"/>
+  <rect x="50" y="50" width="500" height="0.4" fill="#C4956A" opacity="0.25"/>
+
+  <!-- Branding -->
+  <text x="300" y="80" font-family="Georgia, serif" font-size="11" fill="#C4956A"
+        text-anchor="middle" letter-spacing="5" opacity="0.85">POCKET LIBROS</text>
+  <text x="300" y="97" font-family="Georgia, serif" font-size="10" fill="#F2E8D0"
+        text-anchor="middle" letter-spacing="3" opacity="0.35" font-style="italic">ficción adulta</text>
+
+  <!-- ═══ FIGURA CON VESTIDO ROJO ═══ -->
+
+  <!-- Cabello rojizo cayendo (detrás de la figura) -->
+  <path d="M 278,196 Q 260,240 255,300 Q 252,350 258,400"
+        stroke="#7A2218" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.65"/>
+  <path d="M 322,196 Q 340,245 342,305 Q 344,358 338,408"
+        stroke="#7A2218" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.60"/>
+
+  <!-- Moño / peinado recogido parcialmente -->
+  <ellipse cx="300" cy="178" rx="12" ry="8"  fill="#7A2218" opacity="0.70"/>
+
+  <!-- Cabeza — piel crema -->
+  <ellipse cx="300" cy="200" rx="20" ry="24" fill="#F2E8D0" opacity="0.88"/>
+
+  <!-- Cuello -->
+  <rect x="292" y="222" width="16" height="22" rx="7" fill="#F2E8D0" opacity="0.84"/>
+
+  <!-- Hombros y escote (vestido) — top del vestido -->
+  <path d="M 292,244
+           Q 268,240 248,248
+           Q 230,256 226,276
+           L 226,310
+           Q 240,304 260,302
+           Q 280,300 300,302
+           Q 320,300 340,302
+           Q 360,304 374,310
+           L 374,276
+           Q 370,256 352,248
+           Q 332,240 308,244 Z"
+        fill="url(#vestido_grad)" opacity="0.92"/>
+
+  <!-- Brazos -->
+  <!-- Brazo izquierdo -->
+  <path d="M 230,278 Q 210,320 205,380 Q 202,420 210,458"
+        stroke="#F2E8D0" stroke-width="20" stroke-linecap="round" fill="none" opacity="0.80"/>
+  <!-- Brazo derecho alzado (gesto) -->
+  <path d="M 370,278 Q 395,310 408,360 Q 416,400 410,438"
+        stroke="#F2E8D0" stroke-width="19" stroke-linecap="round" fill="none" opacity="0.76"/>
+
+  <!-- Mano derecha -->
+  <ellipse cx="408" cy="450" rx="12" ry="14" fill="#F2E8D0" opacity="0.78"/>
+  <!-- Mano izquierda -->
+  <ellipse cx="212" cy="466" rx="11" ry="13" fill="#F2E8D0" opacity="0.76"/>
+
+  <!-- ═══ VESTIDO ROJO — la pieza central ═══ -->
+  <!-- Cuerpo del vestido (parte superior) -->
+  <path d="M 226,310 L 374,310
+           Q 376,360 372,400
+           Q 368,432 365,460
+           L 235,460
+           Q 232,432 228,400
+           Q 224,360 226,310 Z"
+        fill="url(#vestido_grad)" opacity="0.93"/>
+
+  <!-- Falda — corta, dinámica -->
+  <!-- Vuelo principal -->
+  <path d="M 235,460
+           Q 210,490 192,540
+           Q 178,585 180,630
+           L 420,630
+           Q 422,585 408,540
+           Q 390,490 365,460 Z"
+        fill="url(#vestido_grad)" opacity="0.90"/>
+
+  <!-- Vuelo lateral (movimiento del vestido) -->
+  <path d="M 365,460
+           Q 400,480 425,520
+           Q 448,558 445,600
+           L 420,630
+           Q 418,590 410,550
+           Q 400,510 382,480 Z"
+        fill="#A82020" opacity="0.82"/>
+  <path d="M 235,460
+           Q 200,480 175,520
+           Q 152,558 155,600
+           L 180,630
+           Q 182,590 190,550
+           Q 200,510 218,480 Z"
+        fill="#7A1414" opacity="0.72"/>
+
+  <!-- Pliegues del vestido -->
+  <line x1="295" y1="462" x2="280" y2="628" stroke="#7A1414" stroke-width="1.5" opacity="0.4"/>
+  <line x1="305" y1="462" x2="320" y2="628" stroke="#7A1414" stroke-width="1.5" opacity="0.35"/>
+  <line x1="278" y1="462" x2="255" y2="625" stroke="#7A1414" stroke-width="1"   opacity="0.25"/>
+  <line x1="322" y1="462" x2="345" y2="625" stroke="#7A1414" stroke-width="1"   opacity="0.22"/>
+
+  <!-- ═══ PIERNAS ═══ -->
+  <path d="M 248,628 Q 244,700 242,760 L 268,760 Q 272,700 272,628 Z"
+        fill="#F2E8D0" opacity="0.82"/>
+  <path d="M 352,628 Q 356,700 358,760 L 332,760 Q 328,700 328,628 Z"
+        fill="#F2E8D0" opacity="0.82"/>
+
+  <!-- ═══ ZAPATOS DE TACO DORADOS ═══ -->
+  <!-- Zapato izquierdo -->
+  <path d="M 234,760 Q 238,774 250,778 Q 264,780 272,768 L 268,760 Z"
+        fill="#C4956A" opacity="0.92"/>
+  <line x1="238" y1="760" x2="234" y2="784" stroke="#C4956A" stroke-width="3" opacity="0.85"/>
+  <!-- Zapato derecho -->
+  <path d="M 328,760 L 332,768 Q 340,780 354,778 Q 366,774 370,760 Z"
+        fill="#C4956A" opacity="0.92"/>
+  <line x1="362" y1="760" x2="366" y2="784" stroke="#C4956A" stroke-width="3" opacity="0.85"/>
+
+  <!-- Título -->
+  <text x="300" y="810" font-family="Georgia, serif" font-size="11" fill="#C4956A"
+        text-anchor="middle" letter-spacing="4" opacity="0.75" font-style="italic">RELATO ADULTO · +18</text>
+  <rect x="50" y="816" width="500" height="0.8" fill="#C4956A" opacity="0.35"/>
+  <text x="300" y="844" font-family="Georgia, serif" font-size="22" font-weight="bold"
+        fill="#F2E8D0" text-anchor="middle">La Chica del</text>
+  <text x="300" y="876" font-family="Georgia, serif" font-size="34" font-weight="bold"
+        fill="#F2E8D0" text-anchor="middle">Vestido Rojo</text>
+
+  <!-- Línea inferior -->
+  <rect x="50" y="888" width="500" height="0.8" fill="#C4956A" opacity="0.35"/>
+</svg>

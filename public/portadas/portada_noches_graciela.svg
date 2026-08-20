@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0D020A"/>
+      <stop offset="55%" stop-color="#1A0510"/>
+      <stop offset="100%" stop-color="#130308"/>
+    </linearGradient>
+    <radialGradient id="luna_halo" cx="50%" cy="27%" r="20%">
+      <stop offset="0%" stop-color="#F2E8D0" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#1A0510" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="600" height="900" fill="url(#bg)"/>
+  <rect width="600" height="900" fill="url(#luna_halo)"/>
+
+  <!-- Estrellas -->
+  <circle cx="95"  cy="115" r="1"   fill="#F2E8D0" opacity="0.4"/>
+  <circle cx="175" cy="80"  r="1.3" fill="#F2E8D0" opacity="0.5"/>
+  <circle cx="152" cy="162" r="0.8" fill="#F2E8D0" opacity="0.3"/>
+  <circle cx="465" cy="90"  r="1"   fill="#F2E8D0" opacity="0.38"/>
+  <circle cx="515" cy="138" r="1.2" fill="#F2E8D0" opacity="0.35"/>
+  <circle cx="530" cy="68"  r="1.4" fill="#F2E8D0" opacity="0.42"/>
+  <circle cx="78"  cy="195" r="0.7" fill="#F2E8D0" opacity="0.28"/>
+  <circle cx="422" cy="52"  r="0.9" fill="#F2E8D0" opacity="0.32"/>
+  <circle cx="558" cy="200" r="0.8" fill="#F2E8D0" opacity="0.25"/>
+  <circle cx="42"  cy="290" r="0.7" fill="#F2E8D0" opacity="0.22"/>
+
+  <!-- Línea dorada superior -->
+  <rect x="50" y="46" width="500" height="1"   fill="#C4956A" opacity="0.6"/>
+  <rect x="50" y="50" width="500" height="0.4" fill="#C4956A" opacity="0.25"/>
+
+  <!-- Branding -->
+  <text x="300" y="80" font-family="Georgia, serif" font-size="11" fill="#C4956A"
+        text-anchor="middle" letter-spacing="5" opacity="0.85">POCKET LIBROS</text>
+  <text x="300" y="97" font-family="Georgia, serif" font-size="10" fill="#F2E8D0"
+        text-anchor="middle" letter-spacing="3" opacity="0.35" font-style="italic">ficción adulta</text>
+
+  <!-- ═══ LUNA CRECIENTE ═══ -->
+  <!-- Halo exterior muy suave -->
+  <circle cx="300" cy="218" r="106" fill="#F2E8D0" opacity="0.04"/>
+  <circle cx="300" cy="218" r="92"  fill="#F2E8D0" opacity="0.05"/>
+  <!-- Luna llena base -->
+  <circle cx="300" cy="218" r="78"  fill="#F2E8D0" opacity="0.90"/>
+  <!-- Sombra que crea el creciente (color del fondo) -->
+  <circle cx="256" cy="214" r="70"  fill="#0E0209"/>
+  <!-- Borde luminoso del creciente -->
+  <path d="M 300,140 A 78,78 0 1,1 320,294" fill="none" stroke="#F2E8D0"
+        stroke-width="1.5" stroke-linecap="round" opacity="0.45"/>
+
+  <!-- ═══ FIGURA FEMENINA — silueta continua de espaldas ═══ -->
+
+  <!-- Sombra base en el suelo -->
+  <ellipse cx="300" cy="850" rx="55" ry="7" fill="#C4956A" opacity="0.10"/>
+
+  <!-- Moño — cabello sobre la cabeza -->
+  <ellipse cx="300" cy="376" rx="10" ry="7"  fill="#F2E8D0" opacity="0.72"/>
+  <ellipse cx="300" cy="370" rx="6"  ry="4.5" fill="#F2E8D0" opacity="0.58"/>
+
+  <!-- Cabeza — óvalo fino, art déco -->
+  <ellipse cx="300" cy="398" rx="18" ry="22" fill="#F2E8D0" opacity="0.88"/>
+
+  <!-- Bata/cuerpo — silueta estrecha y alargada, shoulders que nacen de la cabeza -->
+  <path d="
+    M 294,418
+    Q 275,422 266,434
+    Q 255,450 256,475
+    Q 257,505 258,535
+    Q 260,562 255,592
+    Q 250,640 250,705
+    Q 250,772 253,830
+    Q 276,844 300,846
+    Q 324,844 347,830
+    Q 350,772 350,705
+    Q 350,640 345,592
+    Q 340,562 342,535
+    Q 343,505 344,475
+    Q 345,450 334,434
+    Q 325,422 306,418
+    Z
+  " fill="#F2E8D0" opacity="0.85"/>
+
+  <!-- Pliegues de la bata -->
+  <line x1="295" y1="452" x2="291" y2="840" stroke="#110208" stroke-width="1.2" opacity="0.15"/>
+  <line x1="305" y1="452" x2="309" y2="840" stroke="#110208" stroke-width="1.2" opacity="0.12"/>
+  <line x1="278" y1="540" x2="272" y2="838" stroke="#110208" stroke-width="0.9" opacity="0.08"/>
+  <line x1="322" y1="540" x2="328" y2="838" stroke="#110208" stroke-width="0.9" opacity="0.08"/>
+
+  <!-- Medias — tono dorado en tobillos -->
+  <path d="M 252,818 Q 249,832 248,842 L 266,842 Q 267,832 268,818 Z"
+        fill="#C4956A" opacity="0.44"/>
+  <path d="M 348,818 Q 351,832 352,842 L 334,842 Q 333,832 332,818 Z"
+        fill="#C4956A" opacity="0.44"/>
+
+  <!-- Líneas laterales decorativas -->
+  <line x1="50"  y1="508" x2="145" y2="508" stroke="#C4956A" stroke-width="0.6" opacity="0.38"/>
+  <line x1="455" y1="508" x2="550" y2="508" stroke="#C4956A" stroke-width="0.6" opacity="0.38"/>
+
+  <!-- Zona título -->
+  <text x="300" y="864" font-family="Georgia, serif" font-size="11" fill="#C4956A"
+        text-anchor="middle" letter-spacing="4" opacity="0.75" font-style="italic">RELATO ADULTO · +18</text>
+  <rect x="50" y="870" width="500" height="0.8" fill="#C4956A" opacity="0.35"/>
+  <text x="300" y="890" font-family="Georgia, serif" font-size="27" font-weight="bold"
+        fill="#F2E8D0" text-anchor="middle">Las Noches de Graciela</text>
+</svg>
