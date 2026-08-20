@@ -117,9 +117,8 @@ export default function CatalogTabs({ books }: { books: Book[] }) {
                       <div className={`flex items-center pt-2 border-t border-border mt-1 ${price === 0 ? "justify-center" : "justify-between"}`}>
                         {price === 0 ? (
                           <a
-                            href={buyUrl ?? "#"}
-                            {...(buyUrl ? { "data-gumroad-overlay-checkout": "true", target: "_blank", rel: "noopener noreferrer" } : {})}
-                            aria-label={`Descargar ${title} gratis`}
+                            href="#hero"
+                            aria-label={`Regístrate para descargar ${title} gratis`}
                           >
                             <svg width="52" height="52" viewBox="0 0 52 52" aria-hidden="true" style={{flexShrink:0}}>
                               <circle cx="26" cy="26" r="24" fill="none" stroke="#B8952A" strokeWidth="1"/>
