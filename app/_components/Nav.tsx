@@ -67,10 +67,10 @@ export default function Nav() {
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/pocket_libros_isotipo.svg"
+          src="/pocket_libros_logo.svg"
           alt="Pocket Libros"
-          width={40}
-          height={41}
+          width={130}
+          height={63}
           className="block md:hidden"
         />
         {/* eslint-disable-next-line @next/next/no-img-element */}
