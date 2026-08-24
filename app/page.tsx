@@ -8,10 +8,10 @@ const books: Book[] = [
   { title: "Trading para Principiantes", subcategory: "Trading & Finanzas", tab: "noficcion", price: 5, portada: "portada_trading.svg", buyUrl: "https://pocketlibros.gumroad.com/l/trading-principiantes?wanted=true" },
   // No ficción — Liderazgo — USD $5
   { title: "Lidera sin Cargo", subcategory: "Liderazgo", tab: "noficcion", price: 5, portada: "portada_liderazgo.svg", buyUrl: "https://pocketlibros.gumroad.com/l/lider_sin_cargo?wanted=true" },
-  { title: "El Líder que Escucha", subcategory: "Liderazgo", tab: "noficcion", price: 5, portada: "portada_lider_escucha.svg" },
+  { title: "El Líder que Escucha", subcategory: "Liderazgo", tab: "noficcion", price: 5, portada: "portada_lider_escucha.svg", buyUrl: "https://pocketlibros.gumroad.com/l/lider-escucha?wanted=true" },
   // No ficción — Salud & Bienestar — USD $5
-  { title: "Ayuno Intermitente: Protocolo Simple", subcategory: "Salud & Bienestar", tab: "noficcion", price: 5, portada: "portada_ayuno.svg" },
-  { title: "Energía sin Cafeína", subcategory: "Salud & Bienestar", tab: "noficcion", price: 5, portada: "portada_energia.svg" },
+  { title: "Ayuno Intermitente: Protocolo Simple", subcategory: "Salud & Bienestar", tab: "noficcion", price: 5, portada: "portada_ayuno.svg", buyUrl: "https://pocketlibros.gumroad.com/l/ayuno?wanted=true" },
+  { title: "Energía sin Cafeína", subcategory: "Salud & Bienestar", tab: "noficcion", price: 5, portada: "portada_energia.svg", buyUrl: "https://pocketlibros.gumroad.com/l/energia?wanted=true" },
   // No ficción — Operaciones — USD $5
   { title: "Supply Chain en Crisis", subcategory: "Operaciones", tab: "noficcion", price: 5, portada: "portada_supply_chain.svg", buyUrl: "https://pocketlibros.gumroad.com/l/supply-chain?wanted=true" },
   { title: "KPIs que Importan", subcategory: "Operaciones", tab: "noficcion", price: 5, portada: "portada_kpis.svg", buyUrl: "https://pocketlibros.gumroad.com/l/kpis?wanted=true" },
