@@ -84,7 +84,7 @@ const reasons = [
   },
   {
     title: "Precio justo",
-    desc: "Desde USD $3 por título. Sin suscripción. Pagas solo lo que vas a leer.",
+    desc: "Desde USD $2 por título. Sin suscripción. Pagas solo lo que vas a leer.",
   },
 ];
 
