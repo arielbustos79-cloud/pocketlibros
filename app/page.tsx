@@ -21,12 +21,12 @@ const books: Book[] = [
   { title: "La Metamorfosis", author: "Kafka", subcategory: "Clásicos Universales", tab: "ficcion", price: 0, portada: "portada_metamorfosis.svg", buyUrl: "https://pocketlibros.gumroad.com/l/metamorfosis" },
   { title: "1984", author: "Orwell", subcategory: "Clásicos Universales", tab: "ficcion", price: 0, portada: "portada_1984.svg", buyUrl: "https://pocketlibros.gumroad.com/l/1984" },
   { title: "La Divina Comedia", author: "Dante", subcategory: "Clásicos Universales", tab: "ficcion", price: 0, portada: "portada_divina_comedia.svg", buyUrl: "https://pocketlibros.gumroad.com/l/divina-comedia" },
-  // Ficción — Clásicos Universales — USD $3
-  { title: "La Odisea", author: "Homero", subcategory: "Clásicos Universales", tab: "ficcion", price: 3, portada: "portada_odisea.svg", buyUrl: "https://pocketlibros.gumroad.com/l/odisea?wanted=true" },
-  { title: "Crimen y Castigo", author: "Dostoievski", subcategory: "Clásicos Universales", tab: "ficcion", price: 3, portada: "portada_crimen_castigo.svg", buyUrl: "https://pocketlibros.gumroad.com/l/crimen-castigo?wanted=true" },
-  { title: "Orgullo y Prejuicio", author: "Austen", subcategory: "Clásicos Universales", tab: "ficcion", price: 3, portada: "portada_orgullo_prejuicio.svg", buyUrl: "https://pocketlibros.gumroad.com/l/orgullo-prejuicio?wanted=true" },
-  { title: "La Guerra y la Paz", author: "Tolstói", subcategory: "Clásicos Universales", tab: "ficcion", price: 3, portada: "portada_guerra_paz.svg", buyUrl: "https://pocketlibros.gumroad.com/l/guerra-paz?wanted=true" },
-  { title: "Moby Dick", author: "Melville", subcategory: "Clásicos Universales", tab: "ficcion", price: 3, portada: "portada_moby_dick.svg", buyUrl: "https://pocketlibros.gumroad.com/l/moby-dick?wanted=true" },
+  // Ficción — Clásicos Universales — USD $2
+  { title: "La Odisea", author: "Homero", subcategory: "Clásicos Universales", tab: "ficcion", price: 2, portada: "portada_odisea.svg", buyUrl: "https://pocketlibros.gumroad.com/l/odisea?wanted=true" },
+  { title: "Crimen y Castigo", author: "Dostoievski", subcategory: "Clásicos Universales", tab: "ficcion", price: 2, portada: "portada_crimen_castigo.svg", buyUrl: "https://pocketlibros.gumroad.com/l/crimen-castigo?wanted=true" },
+  { title: "Orgullo y Prejuicio", author: "Austen", subcategory: "Clásicos Universales", tab: "ficcion", price: 2, portada: "portada_orgullo_prejuicio.svg", buyUrl: "https://pocketlibros.gumroad.com/l/orgullo-prejuicio?wanted=true" },
+  { title: "La Guerra y la Paz", author: "Tolstói", subcategory: "Clásicos Universales", tab: "ficcion", price: 2, portada: "portada_guerra_paz.svg", buyUrl: "https://pocketlibros.gumroad.com/l/guerra-paz?wanted=true" },
+  { title: "Moby Dick", author: "Melville", subcategory: "Clásicos Universales", tab: "ficcion", price: 2, portada: "portada_moby_dick.svg", buyUrl: "https://pocketlibros.gumroad.com/l/moby-dick?wanted=true" },
   // Ficción — Grandes Pensadores — USD $3
   { title: "La República", author: "Platón", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_republica.svg" },
   { title: "Ética a Nicómaco", author: "Aristóteles", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_etica.svg" },
@@ -38,12 +38,12 @@ const books: Book[] = [
   { title: "El Mundo como Voluntad", author: "Schopenhauer", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_schopenhauer.svg" },
   { title: "Tratado de la Naturaleza Humana", author: "Hume", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_hume.svg" },
   { title: "Ética", author: "Spinoza", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_spinoza.svg" },
-  // Ficción — Relatos +18 — USD $7
-  { title: "A los pies de Marcia", subcategory: "Relatos +18", tab: "ficcion", price: 7, portada: "png/portada_marcia.png", buyUrl: "https://pocketlibros.gumroad.com/l/marcia?wanted=true" },
-  { title: "Las Noches de Graciela", subcategory: "Relatos +18", tab: "ficcion", price: 7, portada: "portada_noches_graciela.svg", buyUrl: "https://pocketlibros.gumroad.com/l/graciela?wanted=true" },
-  { title: "Los Pies de Sofía", subcategory: "Relatos +18", tab: "ficcion", price: 7, portada: "portada_pies_sofia.svg", buyUrl: "https://pocketlibros.gumroad.com/l/pies-sofia?wanted=true" },
-  { title: "La Chica del Vestido Rojo", subcategory: "Relatos +18", tab: "ficcion", price: 7, portada: "portada_vestido_rojo.svg", buyUrl: "https://pocketlibros.gumroad.com/l/vestido-rojo?wanted=true" },
-  { title: "La Llave del 5B", subcategory: "Relatos +18", tab: "ficcion", price: 7, portada: "portada_llave_5b.svg", buyUrl: "https://pocketlibros.gumroad.com/l/llaves-5B?wanted=true" },
+  // Ficción — Relatos +18 — USD $5
+  { title: "A los pies de Marcia", subcategory: "Relatos +18", tab: "ficcion", price: 5, portada: "png/portada_marcia.png", buyUrl: "https://pocketlibros.gumroad.com/l/marcia?wanted=true" },
+  { title: "Las Noches de Graciela", subcategory: "Relatos +18", tab: "ficcion", price: 5, portada: "portada_noches_graciela.svg", buyUrl: "https://pocketlibros.gumroad.com/l/graciela?wanted=true" },
+  { title: "Los Pies de Sofía", subcategory: "Relatos +18", tab: "ficcion", price: 5, portada: "portada_pies_sofia.svg", buyUrl: "https://pocketlibros.gumroad.com/l/pies-sofia?wanted=true" },
+  { title: "La Chica del Vestido Rojo", subcategory: "Relatos +18", tab: "ficcion", price: 5, portada: "portada_vestido_rojo.svg", buyUrl: "https://pocketlibros.gumroad.com/l/vestido-rojo?wanted=true" },
+  { title: "La Llave del 5B", subcategory: "Relatos +18", tab: "ficcion", price: 5, portada: "portada_llave_5b.svg", buyUrl: "https://pocketlibros.gumroad.com/l/llaves-5B?wanted=true" },
 ];
 
 const steps = [
