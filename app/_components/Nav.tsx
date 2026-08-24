@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 const links = [
   { href: "#catalogo", label: "Catálogo" },
   { href: "#nosotros", label: "Nosotros" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/contacto", label: "Contacto" },
 ];
 
 const FONT_SIZES = [
