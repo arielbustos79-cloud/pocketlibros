@@ -36,9 +36,9 @@ const books: Book[] = [
   { title: "Leviatán", author: "Hobbes", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_leviatan.svg", buyUrl: "https://pocketlibros.gumroad.com/l/leviatan?wanted=true" },
   { title: "Así habló Zaratustra", author: "Nietzsche", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_zaratustra.svg", buyUrl: "https://pocketlibros.gumroad.com/l/zaratustra?wanted=true" },
   { title: "Crítica de la Razón Pura", author: "Kant", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_kant.svg", buyUrl: "https://pocketlibros.gumroad.com/l/kant?wanted=true" },
-  { title: "El Mundo como Voluntad", author: "Schopenhauer", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_schopenhauer.svg" },
-  { title: "Tratado de la Naturaleza Humana", author: "Hume", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_hume.svg" },
-  { title: "Ética", author: "Spinoza", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_spinoza.svg" },
+  { title: "El Mundo como Voluntad", author: "Schopenhauer", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_schopenhauer.svg", buyUrl: "https://pocketlibros.gumroad.com/l/shopenhauer?wanted=true" },
+  { title: "Tratado de la Naturaleza Humana", author: "Hume", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_hume.svg", buyUrl: "https://pocketlibros.gumroad.com/l/hume?wanted=true" },
+  { title: "Ética", author: "Spinoza", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_spinoza.svg", buyUrl: "https://pocketlibros.gumroad.com/l/etica-spinoza?wanted=true" },
   // Ficción — Relatos +18 — USD $5
   { title: "A los pies de Marcia", subcategory: "Relatos +18", tab: "ficcion", price: 5, portada: "png/portada_marcia.png", buyUrl: "https://pocketlibros.gumroad.com/l/marcia?wanted=true" },
   { title: "Las Noches de Graciela", subcategory: "Relatos +18", tab: "ficcion", price: 5, portada: "portada_noches_graciela.svg", buyUrl: "https://pocketlibros.gumroad.com/l/graciela?wanted=true" },
