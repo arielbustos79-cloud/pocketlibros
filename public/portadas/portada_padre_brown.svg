@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+<defs>
+  <linearGradient id="bg_padre_brown" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#111111"/>
+    <stop offset="100%" stop-color="#1C1C1C"/>
+  </linearGradient>
+  <linearGradient id="shine_padre_brown" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B8952A" stop-opacity="0"/>
+    <stop offset="50%" stop-color="#B8952A" stop-opacity="1"/>
+    <stop offset="100%" stop-color="#B8952A" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+
+<!-- Fondo -->
+<rect width="600" height="900" fill="url(#bg_padre_brown)"/>
+
+<!-- Borde rojo superior -->
+<rect x="0" y="0" width="600" height="5" fill="#8B1A1A"/>
+
+<!-- Colección top -->
+<text x="300" y="38" font-family="Georgia, serif" font-size="11" fill="#B8952A" text-anchor="middle" letter-spacing="4" font-weight="normal">NOVELA NEGRA</text>
+<text x="300" y="58" font-family="Georgia, serif" font-size="9" fill="#A8A8A8" text-anchor="middle" letter-spacing="3">POCKET LIBROS</text>
+
+<!-- Línea dorada superior -->
+<rect x="40" y="68" width="520" height="0.8" fill="url(#shine_padre_brown)"/>
+
+<!-- Ilustración central -->
+
+  <!-- Cruz grande central -->
+  <rect x="285" y="160" width="30" height="280" rx="4" fill="#A8A8A8" fill-opacity="0.7"/>
+  <rect x="210" y="250" width="180" height="28" rx="4" fill="#A8A8A8" fill-opacity="0.7"/>
+  <!-- Resplandor cruz -->
+  <rect x="292" y="167" width="16" height="264" rx="2" fill="#FFFFFF" fill-opacity="0.12"/>
+  <rect x="217" y="257" width="166" height="14" rx="2" fill="#FFFFFF" fill-opacity="0.12"/>
+  <!-- Paraguas cerrado (debajo de la cruz) -->
+  <line x1="300" y1="480" x2="300" y2="590" stroke="#A8A8A8" stroke-width="6" stroke-linecap="round"/>
+  <path d="M270,490 Q300,460 330,490" fill="none" stroke="#A8A8A8" stroke-width="4"/>
+  <path d="M258,502 Q300,465 342,502 Q342,495 300,490 Q258,495 258,502Z" fill="#A8A8A8" fill-opacity="0.7"/>
+  <!-- Puño del paraguas (dorado) -->
+  <path d="M300,590 Q320,590 320,575 Q320,565 310,565" fill="none" stroke="#B8952A" stroke-width="5" stroke-linecap="round"/>
+  <!-- Brillo centro cruz -->
+  <circle cx="300" cy="278" r="12" fill="#B8952A" fill-opacity="0.5"/>
+
+
+<!-- Línea dorada inferior -->
+<rect x="40" y="620" width="520" height="0.8" fill="url(#shine_padre_brown)"/>
+
+<!-- Título -->
+<text x="300" y="670" font-family="Georgia, serif" font-size="36" fill="#FFFFFF" text-anchor="middle" font-weight="bold">El padre Brown</text>
+
+
+<!-- Autor -->
+<text x="300" y="710" font-family="Georgia, serif" font-size="13" fill="#B8952A" text-anchor="middle" letter-spacing="2">G.K. CHESTERTON</text>
+
+<!-- Línea decorativa autor -->
+<rect x="220" y="722" width="160" height="0.8" fill="#B8952A"/>
+
+<!-- Borde rojo inferior -->
+<rect x="0" y="895" width="600" height="5" fill="#8B1A1A"/>
+
+<!-- Marca de agua PL -->
+<text x="300" y="855" font-family="Georgia, serif" font-size="11" fill="#B8952A" fill-opacity="0.4" text-anchor="middle" letter-spacing="3">PL · EDICIÓN POCKET</text>
+</svg>

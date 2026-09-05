@@ -121,8 +121,21 @@ public/
 - **La Chica del Vestido Rojo** — Elena (colorina, casada) / Marcelo (bestia). 9 años de aventura. Fetiche vestidos rojos cortos. Tono comedia soft sensual. El rojo como código secreto.
 - **La Llave del 5B** — Catalina 32 / Diego 47. Edificio Almería. Fetiche dominación/bondage consensuado. Final: ella enamorada, él hace ghosting.
 
+### Catálogo actual — Novela Negra (10 títulos — USD $2)
+| Archivo portada | Título | Autor |
+|---|---|---|
+| `portada_lupin.svg` | Arsène Lupin, ladrón de guante blanco | Leblanc |
+| `portada_padre_brown.svg` | El padre Brown (selección) | Chesterton |
+| `portada_baskerville.svg` | El sabueso de los Baskerville | Conan Doyle |
+| `portada_morgue.svg` | Los crímenes de la calle Morgue | Poe |
+| `portada_carta_robada.svg` | La carta robada | Poe |
+| `portada_piedra_lunar.svg` | La piedra lunar | Collins |
+| `portada_cuarto_amarillo.svg` | El misterio del cuarto amarillo | Leroux |
+| `portada_aguja_hueca.svg` | La aguja hueca | Leblanc |
+| `portada_charlie_chan.svg` | Charlie Chan continúa | Biggers |
+| `portada_escarlata.svg` | Estudio en Escarlata | Conan Doyle |
+
 ### Catálogo pendiente de producción
-- **Novela Negra:** 10 títulos — USD $3 (dominio público: Conan Doyle, Agatha Christie, etc.)
 - **Relatos +18:** catálogo completo (5/5 producidos)
 ---
 ## Estructura del landing (app/page.tsx)
@@ -149,7 +162,7 @@ No Ficción:
 Ficción:
   → Clásicos Universales   (USD $2)
   → Grandes Pensadores     (USD $2)
-  → Novela Negra           (USD $2)  ← sin títulos aún, no renderiza
+  → Novela Negra           (USD $2)  ← 10 títulos publicados 26 ago 2026
   → Relatos +18            (USD $5)
 ```
 En mobile: tabs como scroll horizontal.
@@ -253,6 +266,16 @@ Ubicación: `public/portadas/png/`
 | La Guerra y la Paz | $2 | pocketlibros.gumroad.com/l/guerra-paz | ✅ Conectado |
 | Moby Dick | $2 | pocketlibros.gumroad.com/l/moby-dick | ✅ Conectado |
 | Orgullo y Prejuicio | $2 | pocketlibros.gumroad.com/l/orgullo-prejuicio | ✅ Conectado |
+| Arsène Lupin | $2 | pocketlibros.gumroad.com/l/lupin | ⏳ Pendiente |
+| El padre Brown | $2 | pocketlibros.gumroad.com/l/padre-brown | ⏳ Pendiente |
+| El sabueso de los Baskerville | $2 | pocketlibros.gumroad.com/l/baskerville | ⏳ Pendiente |
+| Los crímenes de la calle Morgue | $2 | pocketlibros.gumroad.com/l/morgue | ⏳ Pendiente |
+| La carta robada | $2 | pocketlibros.gumroad.com/l/carta-robada | ⏳ Pendiente |
+| La piedra lunar | $2 | pocketlibros.gumroad.com/l/piedra-lunar | ⏳ Pendiente |
+| El misterio del cuarto amarillo | $2 | pocketlibros.gumroad.com/l/cuarto-amarillo | ⏳ Pendiente |
+| La aguja hueca | $2 | pocketlibros.gumroad.com/l/aguja-hueca | ⏳ Pendiente |
+| Charlie Chan continúa | $2 | pocketlibros.gumroad.com/l/charlie-chan | ⏳ Pendiente |
+| Estudio en Escarlata | $2 | pocketlibros.gumroad.com/l/estudio-escarlata | ⏳ Pendiente |
 
 ### Nota: productos gratuitos en Gumroad
 Gumroad obliga "pay what you want" en productos $0 — no hay precio fijo en $0. El usuario debe escribir "0" en el checkout. Es una limitación de plataforma, no hay fix disponible.
@@ -331,7 +354,9 @@ Ubicación: archivos `.docx` en el proyecto (no en el repo — son materiales de
 - [x] **Precios catálogo actualizados en page.tsx — Clásicos $2, Relatos +18 $5** ✅ (24 agosto 2026)
 - [x] **Texto "Precio justo" actualizado: Desde USD $2** ✅ (24 agosto 2026)
 - [x] **Logo completo en mobile (Nav.tsx — reemplaza isotipo)** ✅ (24 agosto 2026)
-- [ ] Portadas Novela Negra (10 pendientes)
+- [x] Portadas Novela Negra (10 SVG producidos 26 ago 2026) ✅
+- [x] 10 ebooks Novela Negra producidos (12-13p PDF, formato HBR) ✅ (26 ago 2026)
+- [ ] Subir 10 PDFs Novela Negra a Gumroad ($2 c/u)
 - [x] 4 títulos adicionales Relatos +18 con portadas ✅ (18 agosto 2026)
 
 ### Contenido
@@ -342,11 +367,11 @@ Ubicación: archivos `.docx` en el proyecto (no en el repo — son materiales de
 - [x] 5 clásicos de pago subidos a Gumroad ($3 c/u) y live ✅ (20 agosto 2026)
 - [ ] Auditoría Grandes Pensadores (10 títulos) — pendiente revisión copyright y disclaimer
 - [ ] Auditoría No Ficción restante (7 títulos)
-- [ ] Producir 10 títulos Novela Negra
+- [x] Producir 10 títulos Novela Negra ✅ (26 ago 2026)
 - [ ] Producir 4 títulos adicionales Relatos +18
 - [ ] Rediseño portadas Grandes Pensadores (nueva paleta por filósofo)
 - [ ] Agregar páginas /terminos y /privacidad con los docs institucionales
 - [ ] Actualizar T&C: Gumroad como procesador de pagos + política de reembolsos
 - [ ] Actualizar Política de Privacidad: mención a Supabase
 ---
-*Pocket Libros · LongViva SpA · pocketlibros.cl · Actualizado 24 agosto 2026 — 8 No Ficción live en Gumroad ($5 c/u); precios actualizados: clásicos de pago $2, relatos +18 $5; 10 Grandes Pensadores producidos con sección Reputación y Legado; 3 buyUrls NF conectados; logo mobile completo*
+*Pocket Libros · LongViva SpA · pocketlibros.cl · Actualizado 26 agosto 2026 — 10 ebooks Novela Negra producidos; 10 SVG portadas NN generados; Gumroad guide NN listo; pendiente subir a Gumroad y activar en landing*

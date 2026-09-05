@@ -39,6 +39,17 @@ const books: Book[] = [
   { title: "El Mundo como Voluntad", author: "Schopenhauer", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_schopenhauer.svg", buyUrl: "https://pocketlibros.gumroad.com/l/shopenhauer?wanted=true" },
   { title: "Tratado de la Naturaleza Humana", author: "Hume", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_hume.svg", buyUrl: "https://pocketlibros.gumroad.com/l/hume?wanted=true" },
   { title: "Ética", author: "Spinoza", subcategory: "Grandes Pensadores", tab: "ficcion", price: 3, portada: "portada_spinoza.svg", buyUrl: "https://pocketlibros.gumroad.com/l/etica-spinoza?wanted=true" },
+  // Ficción — Novela Negra — USD $2
+  { title: "Arsène Lupin, ladrón de guante blanco", author: "Maurice Leblanc", subcategory: "Novela Negra", tab: "ficcion", price: 2, portada: "portada_lupin.svg", buyUrl: "https://pocketlibros.gumroad.com/l/lupin?wanted=true" },
+  { title: "El padre Brown (selección)", author: "G.K. Chesterton", subcategory: "Novela Negra", tab: "ficcion", price: 2, portada: "portada_padre_brown.svg", buyUrl: "https://pocketlibros.gumroad.com/l/padre-brown?wanted=true" },
+  { title: "El sabueso de los Baskerville", author: "Arthur Conan Doyle", subcategory: "Novela Negra", tab: "ficcion", price: 2, portada: "portada_baskerville.svg", buyUrl: "https://pocketlibros.gumroad.com/l/baskerville?wanted=true" },
+  { title: "Los crímenes de la calle Morgue", author: "Edgar Allan Poe", subcategory: "Novela Negra", tab: "ficcion", price: 2, portada: "portada_morgue.svg", buyUrl: "https://pocketlibros.gumroad.com/l/morgue?wanted=true" },
+  { title: "La carta robada", author: "Edgar Allan Poe", subcategory: "Novela Negra", tab: "ficcion", price: 2, portada: "portada_carta_robada.svg", buyUrl: "https://pocketlibros.gumroad.com/l/carta-robada?wanted=true" },
+  { title: "La piedra lunar", author: "Wilkie Collins", subcategory: "Novela Negra", tab: "ficcion", price: 2, portada: "portada_piedra_lunar.svg", buyUrl: "https://pocketlibros.gumroad.com/l/piedra-lunar?wanted=true" },
+  { title: "El misterio del cuarto amarillo", author: "Gaston Leroux", subcategory: "Novela Negra", tab: "ficcion", price: 2, portada: "portada_cuarto_amarillo.svg", buyUrl: "https://pocketlibros.gumroad.com/l/cuarto-amarillo?wanted=true" },
+  { title: "La aguja hueca", author: "Maurice Leblanc", subcategory: "Novela Negra", tab: "ficcion", price: 2, portada: "portada_aguja_hueca.svg", buyUrl: "https://pocketlibros.gumroad.com/l/aguja-hueca?wanted=true" },
+  { title: "Charlie Chan continúa", author: "Earl Derr Biggers", subcategory: "Novela Negra", tab: "ficcion", price: 2, portada: "portada_charlie_chan.svg", buyUrl: "https://pocketlibros.gumroad.com/l/charlie-chan?wanted=true" },
+  { title: "Estudio en Escarlata", author: "Arthur Conan Doyle", subcategory: "Novela Negra", tab: "ficcion", price: 2, portada: "portada_escarlata.svg", buyUrl: "https://pocketlibros.gumroad.com/l/estudio-escarlata?wanted=true" },
   // Ficción — Relatos +18 — USD $5
   { title: "A los pies de Marcia", subcategory: "Relatos +18", tab: "ficcion", price: 5, portada: "png/portada_marcia.png", buyUrl: "https://pocketlibros.gumroad.com/l/marcia?wanted=true" },
   { title: "Las Noches de Graciela", subcategory: "Relatos +18", tab: "ficcion", price: 5, portada: "portada_noches_graciela.svg", buyUrl: "https://pocketlibros.gumroad.com/l/graciela?wanted=true" },
@@ -167,7 +178,7 @@ export default function Home() {
                 key={i}
                 className="font-serif text-gold text-[15px] tracking-[0.12em] whitespace-nowrap px-10"
               >
-                Conocimiento accionable. Sin relleno aceptable.&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;Pocket Libros&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;No Ficción · Clásicos · Grandes Pensadores · Relatos +18&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;Tu primera descarga es gratis&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;
+                Conocimiento accionable. Sin relleno aceptable.&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;Pocket Libros&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;No Ficción · Clásicos · Grandes Pensadores · Novela Negra · Relatos +18&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;Tu primera descarga es gratis&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;
               </span>
             ))}
           </div>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+<defs>
+  <linearGradient id="bg_morgue" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#111111"/>
+    <stop offset="100%" stop-color="#1C1C1C"/>
+  </linearGradient>
+  <linearGradient id="shine_morgue" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B8952A" stop-opacity="0"/>
+    <stop offset="50%" stop-color="#B8952A" stop-opacity="1"/>
+    <stop offset="100%" stop-color="#B8952A" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+
+<!-- Fondo -->
+<rect width="600" height="900" fill="url(#bg_morgue)"/>
+
+<!-- Borde rojo superior -->
+<rect x="0" y="0" width="600" height="5" fill="#8B1A1A"/>
+
+<!-- Colección top -->
+<text x="300" y="38" font-family="Georgia, serif" font-size="11" fill="#B8952A" text-anchor="middle" letter-spacing="4" font-weight="normal">NOVELA NEGRA</text>
+<text x="300" y="58" font-family="Georgia, serif" font-size="9" fill="#A8A8A8" text-anchor="middle" letter-spacing="3">POCKET LIBROS</text>
+
+<!-- Línea dorada superior -->
+<rect x="40" y="68" width="520" height="0.8" fill="url(#shine_morgue)"/>
+
+<!-- Ilustración central -->
+
+  <!-- Lupa grande -->
+  <circle cx="280" cy="350" r="130" fill="none" stroke="#A8A8A8" stroke-width="8" stroke-opacity="0.7"/>
+  <circle cx="280" cy="350" r="122" fill="#8B1A1A" fill-opacity="0.06"/>
+  <!-- Interior lupa: sombra mano -->
+  <path d="M220,290 Q250,260 300,280 Q340,300 350,350 Q360,400 330,430 Q300,460 260,440 Q220,420 210,380 Q200,340 220,290Z" fill="#A8A8A8" fill-opacity="0.12"/>
+  <!-- Mano/garra (el orangután) en la lupa -->
+  <path d="M240,310 Q260,290 280,310 Q300,290 320,310 Q340,290 350,320 Q360,360 340,400 Q320,430 280,420 Q240,410 230,380 Q220,350 240,310Z" fill="#A8A8A8" fill-opacity="0.3"/>
+  <!-- Dedos -->
+  <path d="M240,310 Q235,280 245,265" fill="none" stroke="#A8A8A8" stroke-width="12" stroke-linecap="round" stroke-opacity="0.4"/>
+  <path d="M265,300 Q260,270 268,255" fill="none" stroke="#A8A8A8" stroke-width="12" stroke-linecap="round" stroke-opacity="0.4"/>
+  <path d="M290,298 Q287,268 294,253" fill="none" stroke="#A8A8A8" stroke-width="12" stroke-linecap="round" stroke-opacity="0.4"/>
+  <path d="M314,305 Q312,275 320,260" fill="none" stroke="#A8A8A8" stroke-width="12" stroke-linecap="round" stroke-opacity="0.4"/>
+  <path d="M334,320 Q340,295 348,285" fill="none" stroke="#A8A8A8" stroke-width="10" stroke-linecap="round" stroke-opacity="0.4"/>
+  <!-- Mango lupa (dorado) -->
+  <line x1="385" y1="445" x2="460" y2="550" stroke="#B8952A" stroke-width="14" stroke-linecap="round"/>
+  <line x1="390" y1="438" x2="462" y2="544" stroke="#B8952A" stroke-width="5" stroke-linecap="round" stroke-opacity="0.5"/>
+  <!-- Farola parisina (izquierda) -->
+  <line x1="100" y1="180" x2="100" y2="600" stroke="#A8A8A8" stroke-width="5" stroke-opacity="0.4"/>
+  <path d="M100,180 Q140,160 150,200" fill="none" stroke="#A8A8A8" stroke-width="4" stroke-opacity="0.4"/>
+  <ellipse cx="150" cy="205" rx="18" ry="22" fill="#B8952A" fill-opacity="0.3"/>
+  <!-- Año -->
+  <text x="280" y="360" font-family="Georgia,serif" font-size="22" fill="#B8952A" fill-opacity="0.5" text-anchor="middle">1841</text>
+
+
+<!-- Línea dorada inferior -->
+<rect x="40" y="620" width="520" height="0.8" fill="url(#shine_morgue)"/>
+
+<!-- Título -->
+<text x="300" y="670" font-family="Georgia, serif" font-size="36" fill="#FFFFFF" text-anchor="middle" font-weight="bold">Los crímenes de</text>
+<text x="300" y="705" font-family="Georgia, serif" font-size="14" fill="#A8A8A8" text-anchor="middle" font-style="italic">la calle Morgue</text>
+
+<!-- Autor -->
+<text x="300" y="740" font-family="Georgia, serif" font-size="13" fill="#B8952A" text-anchor="middle" letter-spacing="2">EDGAR ALLAN POE</text>
+
+<!-- Línea decorativa autor -->
+<rect x="220" y="752" width="160" height="0.8" fill="#B8952A"/>
+
+<!-- Borde rojo inferior -->
+<rect x="0" y="895" width="600" height="5" fill="#8B1A1A"/>
+
+<!-- Marca de agua PL -->
+<text x="300" y="855" font-family="Georgia, serif" font-size="11" fill="#B8952A" fill-opacity="0.4" text-anchor="middle" letter-spacing="3">PL · EDICIÓN POCKET</text>
+</svg>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900" width="600" height="900">
+<defs>
+  <linearGradient id="bg_charlie_chan" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#111111"/>
+    <stop offset="100%" stop-color="#1C1C1C"/>
+  </linearGradient>
+  <linearGradient id="shine_charlie_chan" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#B8952A" stop-opacity="0"/>
+    <stop offset="50%" stop-color="#B8952A" stop-opacity="1"/>
+    <stop offset="100%" stop-color="#B8952A" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+
+<!-- Fondo -->
+<rect width="600" height="900" fill="url(#bg_charlie_chan)"/>
+
+<!-- Borde rojo superior -->
+<rect x="0" y="0" width="600" height="5" fill="#8B1A1A"/>
+
+<!-- Colección top -->
+<text x="300" y="38" font-family="Georgia, serif" font-size="11" fill="#B8952A" text-anchor="middle" letter-spacing="4" font-weight="normal">NOVELA NEGRA</text>
+<text x="300" y="58" font-family="Georgia, serif" font-size="9" fill="#A8A8A8" text-anchor="middle" letter-spacing="3">POCKET LIBROS</text>
+
+<!-- Línea dorada superior -->
+<rect x="40" y="68" width="520" height="0.8" fill="url(#shine_charlie_chan)"/>
+
+<!-- Ilustración central -->
+
+  <!-- Círculo de fondo -->
+  <circle cx="300" cy="340" r="155" fill="#8B1A1A" fill-opacity="0.08"/>
+  <circle cx="300" cy="340" r="148" fill="none" stroke="#8B1A1A" stroke-width="0.8" stroke-opacity="0.3"/>
+  <!-- Placa/estrella de detective (6 puntas) -->
+  <polygon points="300,200 316,248 366,248 328,277 342,326 300,296 258,326 272,277 234,248 284,248" fill="#B8952A" fill-opacity="0.8"/>
+  <!-- Centro placa -->
+  <circle cx="300" cy="270" r="28" fill="#111111"/>
+  <circle cx="300" cy="270" r="22" fill="#B8952A" fill-opacity="0.2"/>
+  <text x="300" y="275" font-family="Georgia,serif" font-size="10" fill="#B8952A" text-anchor="middle" letter-spacing="1">HPD</text>
+  <!-- Flor de loto (base) -->
+  <ellipse cx="300" cy="480" rx="12" ry="18" fill="#A8A8A8" fill-opacity="0.7"/>
+  <ellipse cx="270" cy="490" rx="10" ry="18" fill="#A8A8A8" fill-opacity="0.55" transform="rotate(-20,270,490)"/>
+  <ellipse cx="330" cy="490" rx="10" ry="18" fill="#A8A8A8" fill-opacity="0.55" transform="rotate(20,330,490)"/>
+  <ellipse cx="248" cy="505" rx="9" ry="16" fill="#A8A8A8" fill-opacity="0.4" transform="rotate(-40,248,505)"/>
+  <ellipse cx="352" cy="505" rx="9" ry="16" fill="#A8A8A8" fill-opacity="0.4" transform="rotate(40,352,505)"/>
+  <!-- Tallo loto -->
+  <line x1="300" y1="498" x2="300" y2="560" stroke="#A8A8A8" stroke-width="3" stroke-opacity="0.4"/>
+  <!-- Agua/superficie -->
+  <ellipse cx="300" cy="560" rx="80" ry="12" fill="#A8A8A8" fill-opacity="0.08"/>
+  <!-- Sombrero (icónico Charlie Chan) -->
+  <ellipse cx="300" cy="378" rx="48" ry="10" fill="#A8A8A8" fill-opacity="0.6"/>
+  <path d="M252,378 Q265,330 300,325 Q335,330 348,378Z" fill="#A8A8A8" fill-opacity="0.6"/>
+  <!-- Frases sentenciosas (decorativas) -->
+  <text x="300" y="595" font-family="Georgia,serif" font-size="9" fill="#B8952A" fill-opacity="0.4" text-anchor="middle" font-style="italic">"La observación es el alma del método."</text>
+
+
+<!-- Línea dorada inferior -->
+<rect x="40" y="620" width="520" height="0.8" fill="url(#shine_charlie_chan)"/>
+
+<!-- Título -->
+<text x="300" y="670" font-family="Georgia, serif" font-size="36" fill="#FFFFFF" text-anchor="middle" font-weight="bold">Charlie Chan</text>
+<text x="300" y="705" font-family="Georgia, serif" font-size="14" fill="#A8A8A8" text-anchor="middle" font-style="italic">continúa</text>
+
+<!-- Autor -->
+<text x="300" y="740" font-family="Georgia, serif" font-size="13" fill="#B8952A" text-anchor="middle" letter-spacing="2">EARL DERR BIGGERS</text>
+
+<!-- Línea decorativa autor -->
+<rect x="220" y="752" width="160" height="0.8" fill="#B8952A"/>
+
+<!-- Borde rojo inferior -->
+<rect x="0" y="895" width="600" height="5" fill="#8B1A1A"/>
+
+<!-- Marca de agua PL -->
+<text x="300" y="855" font-family="Georgia, serif" font-size="11" fill="#B8952A" fill-opacity="0.4" text-anchor="middle" letter-spacing="3">PL · EDICIÓN POCKET</text>
+</svg>
